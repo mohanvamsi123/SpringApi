@@ -34,8 +34,6 @@ public class Person {
    @Column(name = "phone_no",length=10,nullable = false)
    private long phone_no;
    
-   @Column(name = "Altphone_no",length=10,nullable = false)
-   private long Altphone_no;
    
   @Embedded
    private Address address;
@@ -45,17 +43,14 @@ public class Person {
 	  
   }
 
-public Person(Long u_id, String firstName, String lastName, long phone_no, long altphone_no, Address address) {
+public Person(Long u_id, String firstName, String lastName, long phone_no, Address address) {
 	super();
 	U_id = u_id;
 	this.firstName = firstName;
 	this.lastName = lastName;
 	this.phone_no = phone_no;
-	Altphone_no = altphone_no;
 	this.address = address;
 }
-
-
 
 public Long getU_id() {
 	return U_id;
@@ -89,14 +84,6 @@ public void setPhone_no(long phone_no) {
 	this.phone_no = phone_no;
 }
 
-public long getAltphone_no() {
-	return Altphone_no;
-}
-
-public void setAltphone_no(long altphone_no) {
-	Altphone_no = altphone_no;
-}
-
 public Address getAddress() {
 	return address;
 }
@@ -105,5 +92,3 @@ public void setAddress(Address address) {
 	this.address = address;
 }
 }
-
-
