@@ -22,6 +22,7 @@ import com.accenture.lkm.business.bean.EmployeeBean;
 import com.accenture.lkm.entity.Person;
 import com.accenture.lkm.service.EmployeeService;
 
+@CrossOrigin
 @RestController
 public class EmployeeController {
 	
