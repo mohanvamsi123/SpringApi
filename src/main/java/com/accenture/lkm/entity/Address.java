@@ -69,4 +69,4 @@ public void setShopname(String shopname) {
 }
 
 
-		
+}
