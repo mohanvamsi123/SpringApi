@@ -5,7 +5,7 @@ import javax.persistence.Table;
 
 @Embeddable
 public class Address {
-	 private int houseNumber;
+	
 	     
 	   
 	    
@@ -25,23 +25,10 @@ public Address()
 
 
 
-public Address(int houseNumber, String city, String shopname) {
+public Address(String city, String shopname) {
 	super();
-	this.houseNumber = houseNumber;
 	this.city = city;
 	this.shopname = shopname;
-}
-
-
-
-public int getHouseNumber() {
-	return houseNumber;
-}
-
-
-
-public void setHouseNumber(int houseNumber) {
-	this.houseNumber = houseNumber;
 }
 
 
@@ -67,6 +54,7 @@ public String getShopname() {
 public void setShopname(String shopname) {
 	this.shopname = shopname;
 }
+
 
 
 }
