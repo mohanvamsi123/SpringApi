@@ -21,7 +21,7 @@ public class Person {
 	@Id
 	@Column(name="U_id")
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long U_id;
+	private long U_id;
     
 	
    @Column(name = "first_name", nullable = false)
@@ -37,13 +37,12 @@ public class Person {
    
   @Embedded
    private Address address;
-  
   public Person()
   {
 	  
   }
 
-public Person(Long u_id, String firstName, String lastName, long phone_no, Address address) {
+public Person(long u_id, String firstName, String lastName, long phone_no, Address address) {
 	super();
 	U_id = u_id;
 	this.firstName = firstName;
@@ -52,11 +51,11 @@ public Person(Long u_id, String firstName, String lastName, long phone_no, Addre
 	this.address = address;
 }
 
-public Long getU_id() {
+public long getU_id() {
 	return U_id;
 }
 
-public void setU_id(Long u_id) {
+public void setU_id(long u_id) {
 	U_id = u_id;
 }
 

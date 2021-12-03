@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.accenture.lkm.business.bean.EmployeeBean;
+import com.accenture.lkm.business.bean.Personbean;
 import com.accenture.lkm.entity.Person;
 import com.accenture.lkm.service.EmployeeService;
+
+
 
 @CrossOrigin
 @RestController
@@ -33,19 +35,27 @@ public class EmployeeController {
 	
 	
 	@GetMapping(value="emp/controller/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Person>> getdetails()
+	public ResponseEntity<List<Personbean>> getdetails() 
 	{
-		if((employeeService.getdetails()).isEmpty())
-		{
-		return new ResponseEntity<>(
-				null, HttpStatus.NOT_FOUND);
-	}
-		else
-			{
-			return new ResponseEntity<>(
-					employeeService.getdetails(), HttpStatus.OK);
-			}
 		
+	if((employeeService.getdetails()).isEmpty()) {
+		System.out.println("no data found");
+		return new ResponseEntity<List<Personbean>>(HttpStatus.NO_CONTENT);
+		
+	}else {
+		return new ResponseEntity<List<Personbean>>(employeeService.getdetails(), HttpStatus.FOUND);
+	}		
+}
+	
+	@RequestMapping(value = "emp/controller/getDetails/{userid}", method = RequestMethod.GET)
+	public ResponseEntity<Personbean> getUsersById(@PathVariable long userid){
+		Personbean p  = employeeService.getUsersById(userid);
+	
+		if(p==null) {
+			return new ResponseEntity<Personbean>(HttpStatus.NO_CONTENT);
+		}else {
+			return new ResponseEntity<Personbean>(p, HttpStatus.FOUND);
+		}		
 	}
 	
 	
@@ -53,16 +63,22 @@ public class EmployeeController {
 	
 	
 	@PostMapping(value = "emp/controller/postDetails")
-	public String postdetails(@RequestBody Person p){
-		System.out.println("Hello");
-		System.out.println(p.getFirstName());
-		return employeeService.postdetails(p);
+	public String postdetails(@RequestBody Personbean p){
+		
+		employeeService.addPerson(p);
+		return "successfully added user.";
 		
 		
 	}
 	
+	
+	
+	
+	
+	
+	
 	@PutMapping(value = "emp/controller/putDetails/{id}")
-	public ResponseEntity<Person>  putdetails(@RequestBody Person p, @PathVariable(value = "id") Long id){
+	public ResponseEntity<Person>  putdetails(@RequestBody Person p, @PathVariable(value = "id") long id){
 		 
 	return employeeService.Update(p,id);
 	
@@ -70,7 +86,7 @@ public class EmployeeController {
 	
 	}
 	@DeleteMapping(value = "emp/controller/deleteDetails/{id}")
-	public void deletedetails(@PathVariable(value = "id") Long id){
+	public void deletedetails(@PathVariable(value = "id") long id){
 		 
 	employeeService.delete(id);
 	

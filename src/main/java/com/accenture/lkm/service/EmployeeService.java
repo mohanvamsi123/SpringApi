@@ -1,11 +1,12 @@
 package com.accenture.lkm.service;
 
-import java.util.Collection;
+
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.http.ResponseEntity;
 
+import com.accenture.lkm.business.bean.Personbean;
 import com.accenture.lkm.entity.Person;
 
 
@@ -14,13 +15,16 @@ public interface EmployeeService {
 
 	
 
-	List<Person> getdetails();
+	List<Personbean> getdetails();
 
-	String postdetails(Person p);
+	
+	void addPerson(Personbean p);
 
 	ResponseEntity<Person> Update(Person p,long id);
 
-	void delete(Long id);
+	void delete(long id);
+	
+	Personbean getUsersById(long id);
 		
 
 }
