@@ -46,7 +46,7 @@ public class EmployeeController {
 		return new ResponseEntity<List<Personbean>>(HttpStatus.NO_CONTENT);
 		
 	}else {
-		return new ResponseEntity<List<Personbean>>(employeeService.getdetails(), HttpStatus.FOUND);
+		return new ResponseEntity<List<Personbean>>(employeeService.getdetails(), HttpStatus.OK);
 	}		
 }
 	
@@ -57,7 +57,7 @@ public class EmployeeController {
 		if(p==null) {
 			return new ResponseEntity<Personbean>(HttpStatus.NO_CONTENT);
 		}else {
-			return new ResponseEntity<Personbean>(p, HttpStatus.FOUND);
+			return new ResponseEntity<Personbean>(p, HttpStatus.OK);
 		}		
 	}
 	
