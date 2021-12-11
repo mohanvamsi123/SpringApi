@@ -1,5 +1,8 @@
 package com.accenture.lkm.business.bean;
 
+
+
+
 public class AddressBean {
 	
 	private String city;
