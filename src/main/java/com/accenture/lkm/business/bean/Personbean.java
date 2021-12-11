@@ -1,7 +1,6 @@
 package com.accenture.lkm.business.bean;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
+
 
 import com.accenture.lkm.entity.Address;
 
