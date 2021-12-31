@@ -71,7 +71,7 @@ public class EmployeeController {
 	public String postdetails(@RequestBody Personbean p){
 		
 		employeeService.addPerson(p);
-		return "successfully added user.";
+		return '{"output":"successfully added user."}';
 		
 		
 	}
