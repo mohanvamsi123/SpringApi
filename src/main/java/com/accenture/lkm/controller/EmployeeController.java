@@ -67,7 +67,7 @@ public class EmployeeController {
 	
 	
 	
-	@PostMapping(value = "emp/controller/postDetails")
+	@PostMapping(value = "emp/controller/postDetails",produces=MediaType.APPLICATION_JSON_VALUE)
 	public String postdetails(@RequestBody Personbean p){
 		
 		employeeService.addPerson(p);
