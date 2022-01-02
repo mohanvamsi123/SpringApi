@@ -14,7 +14,6 @@ public class Personbean {
 	    
 		
 
-	   private String lastName;
 	   
 	
 	   private long phone_no;
@@ -31,11 +30,10 @@ public class Personbean {
 	   }
 
 
-	public Personbean(Long u_id, String firstName, String lastName, long phone_no, Address address) {
+	public Personbean(Long u_id, String firstName, long phone_no, Address address) {
 		super();
 		U_id = u_id;
 		this.firstName = firstName;
-		this.lastName = lastName;
 		this.phone_no = phone_no;
 		this.address = address;
 	}
@@ -61,14 +59,7 @@ public class Personbean {
 	}
 
 
-	public String getLastName() {
-		return lastName;
-	}
-
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+	
 
 
 	public long getPhone_no() {

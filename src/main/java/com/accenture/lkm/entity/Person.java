@@ -14,7 +14,7 @@ import javax.persistence.UniqueConstraint;
 
 
 @Entity(name="Person")
-@Table(uniqueConstraints= {@UniqueConstraint(columnNames= {"first_name","phone_no","Last_name"})})
+@Table(uniqueConstraints= {@UniqueConstraint(columnNames= {"first_name","phone_no"})})
 public class Person {
 	
 	
@@ -28,8 +28,7 @@ public class Person {
    private String firstName;
     
 	
-   @Column(name = "last_name", nullable = false)
-   private String lastName;
+   
    
    @Column(name = "phone_no",length=10,nullable = false)
    private long phone_no;
@@ -42,11 +41,10 @@ public class Person {
 	  
   }
 
-public Person(long u_id, String firstName, String lastName, long phone_no, Address address) {
+public Person(long u_id, String firstName, long phone_no, Address address) {
 	super();
 	U_id = u_id;
 	this.firstName = firstName;
-	this.lastName = lastName;
 	this.phone_no = phone_no;
 	this.address = address;
 }
@@ -67,13 +65,7 @@ public void setFirstName(String firstName) {
 	this.firstName = firstName;
 }
 
-public String getLastName() {
-	return lastName;
-}
 
-public void setLastName(String lastName) {
-	this.lastName = lastName;
-}
 
 public long getPhone_no() {
 	return phone_no;
