@@ -36,7 +36,7 @@ public class Person {
    private long phone_no;
 
    @Temporal(TemporalType.TIMESTAMP)
-   @Coloumn(nullable=false)
+   @Column(nullable=false)
    private Date CreatedDate;
 
     @PrePersist
