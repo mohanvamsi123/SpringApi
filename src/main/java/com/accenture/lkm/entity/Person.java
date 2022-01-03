@@ -57,6 +57,7 @@ public Person(long u_id, String firstName, long phone_no, Date CreatedDate, Addr
 	U_id = u_id;
 	this.firstName = firstName;
 	this.phone_no = phone_no;
+	this.CreatedDate=CreatedDate;
 	this.address = address;
 }
 
