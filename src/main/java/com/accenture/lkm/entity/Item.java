@@ -26,6 +26,9 @@ public class Item {
     private String Item_Name;
 	@Column(columnDefinition="boolean default True")
     private boolean Item_Status;
+    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @Temporal(TemporalType.TIMESTAMP)
+	 private Date CreatedDate;
 
 	
 	
@@ -48,14 +51,27 @@ public class Item {
 	public void setItem_Status(boolean item_Status) {
 		Item_Status = item_Status;
 	}
+	public Date getCreatedDate()
+    {
+   return CreatedDate;
+}
+
+public void setCreatedDate(Date CreatedDate)
+{
+this.CreatedDate=CreatedDate;
+} 
+
+	
+
 	
 	
-	public Item(long item_Id, String item_Name, boolean item_Status) {
+	public Item(long item_Id, String item_Name, boolean item_Status,Date CreatedDate) {
 		super();
 		
 		Item_Id = item_Id;
 		Item_Name = item_Name;
 		Item_Status = item_Status;
+		this.CreatedDate=CreatedDate;
 		
 		
 	}

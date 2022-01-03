@@ -8,12 +8,14 @@ public class ItemBean {
 	private long Item_Id;
      private String Item_Name;
      private boolean Item_Status;
+	  private Date CreatedDate;
 
-	public ItemBean(long item_Id, String item_Name, boolean item_Status) {
+	public ItemBean(long item_Id, String item_Name, boolean item_Status,Date CreatedDate) {
 		super();
 		Item_Id = item_Id;
 		Item_Name = item_Name;
 		Item_Status = item_Status;
+		this.CreatedDate=CreatedDate;
 	}
 		public ItemBean()
 		{
@@ -39,7 +41,15 @@ public class ItemBean {
 	public void setItem_Status(boolean item_Status) {
 		Item_Status = item_Status;
 	}
+    public Date getCreatedDate()
+{
+return CreatedDate;
+}
 
+public void setCreatedDate(Date CreatedDate)
+{
+this.CreatedDate=CreatedDate;
+}
      
      
      
