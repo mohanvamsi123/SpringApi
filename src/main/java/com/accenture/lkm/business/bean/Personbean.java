@@ -95,7 +95,7 @@ this.CreatedDate=CreatedDate;
 		U_id = u_id;
 		this.firstName = firstName;
 		this.phone_no = phone_no;
-		this.CreatedDate=CreatedDate;
+		this.CreatedDate=createdDate;
 		this.address = address;
 	}
 
