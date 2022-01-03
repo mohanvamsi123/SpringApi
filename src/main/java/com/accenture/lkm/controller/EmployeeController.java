@@ -68,7 +68,7 @@ public class EmployeeController {
 	
 	
 	@PostMapping(value = "emp/controller/postDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public String postdetails(@RequestBody Person p){
+	public String postdetails(@RequestBody Person p) throws exception{
 		
 		employeeService.addPerson(p);
 		return "{\"response\":\"successfully added user.\"}";
