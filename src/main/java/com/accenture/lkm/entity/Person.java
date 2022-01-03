@@ -5,7 +5,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -41,7 +41,7 @@ public class Person {
 
     @PrePersist
     private void OnCreate(){
-    Createddate=new date();
+    CreatedDate=new date();
      }
    
    
