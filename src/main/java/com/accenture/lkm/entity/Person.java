@@ -38,6 +38,7 @@ public class Person {
 
 
    @DateTimeFormat(pattern="yyyy-MM-dd")
+    @Temporal(TemporalType.DATESTAMP)
    private Date CreatedDate;
 
    
