@@ -39,7 +39,7 @@ public class Person {
 
    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Temporal(TemporalType.TIMESTAMP)
-   private String CreatedDate;
+   private Date CreatedDate;
 
    
   @Embedded
@@ -49,7 +49,7 @@ public class Person {
 	  
   }
 
-public Person(long u_id, String firstName, long phone_no,String CreatedDate, Address address) {
+public Person(long u_id, String firstName, long phone_no,Date CreatedDate, Address address) {
 	super();
 	U_id = u_id;
 	this.firstName = firstName;
@@ -84,12 +84,12 @@ public void setPhone_no(long phone_no) {
 	this.phone_no = phone_no;
 }
 
-public String getCreatedDate()
+public Date getCreatedDate()
 {
 return CreatedDate;
 }
 
-public void setCreatedDate(String CreatedDate)
+public void setCreatedDate(Date CreatedDate)
 {
 this.CreatedDate=CreatedDate;
 } 
