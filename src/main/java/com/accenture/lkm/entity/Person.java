@@ -36,8 +36,7 @@ public class Person {
    @Column(name = "phone_no",length=10,nullable = false)
    private long phone_no;
 
-  
-   @Column(name = "Created_Date",nullable=false)
+
    @Temporal(TemporalType.DATE)
    private Date CreatedDate=new Date(System.currentTimeMillis()); 
 
