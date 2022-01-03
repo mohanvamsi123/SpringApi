@@ -38,10 +38,9 @@ public class Person {
    private long phone_no;
 
 
-   /*@Temporal(TemporalType.DATE)
-   @Column(name="Date")
+   @DateTimeFormat(pattern="yyyy-MM-dd")
    private Date CreatedDate;
-*/
+
 
    
   @Embedded
@@ -51,12 +50,12 @@ public class Person {
 	  
   }
 
-public Person(long u_id, String firstName, long phone_no,/* Date CreatedDatem,*/  Address address) {
+public Person(long u_id, String firstName, long phone_no,Date CreatedDate, Address address) {
 	super();
 	U_id = u_id;
 	this.firstName = firstName;
 	this.phone_no = phone_no;
-	//this.CreatedDate=CreatedDate; 
+	this.CreatedDate=CreatedDate; 
 	this.address = address;
 }
 
@@ -86,7 +85,7 @@ public void setPhone_no(long phone_no) {
 	this.phone_no = phone_no;
 }
 
-/* public Date getCreatedDate()
+public Date getCreatedDate()
 {
 return CreatedDate;
 }
@@ -94,7 +93,7 @@ return CreatedDate;
 public void setCreatedDate(Date CreatedDate)
 {
 this.CreatedDate=CreatedDate;
-} */
+} 
 
 
 
