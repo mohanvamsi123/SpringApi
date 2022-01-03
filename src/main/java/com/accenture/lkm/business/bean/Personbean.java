@@ -79,7 +79,7 @@ this.CreatedDate=CreatedDate;
 
 
 	   
-}
+
 
 	   
 	   
@@ -97,6 +97,7 @@ this.CreatedDate=CreatedDate;
 		this.phone_no = phone_no;
 		this.CreatedDate=createdDate;
 		this.address = address;
+	}
 	}
 
 
