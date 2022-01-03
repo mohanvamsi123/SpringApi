@@ -92,10 +92,7 @@ public Date getCreatedDate()
 return CreatedDate;
 }
 
-public void setCreatedDate(Date CreatedDate)
-{
-this.CreatedDate=CreatedDate;
-}
+
 
 public Address getAddress() {
 	return address;
