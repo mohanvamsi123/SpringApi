@@ -39,6 +39,7 @@ public class Person {
 
    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
+	@Column(insertable=false)
    private Date CreatedDate;
 
    
