@@ -39,7 +39,7 @@ public class Person {
   
    @Column(name = "Created_Date",nullable=false)
    @Temporal(TemporalType.DATE)
-   private Date CreatedDate=new Date(System.currentTimeMills()); 
+   private Date CreatedDate=new Date(System.currentTimeMillis()); 
 
 
    
