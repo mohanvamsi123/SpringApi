@@ -35,11 +35,14 @@ public class Person {
    @Column(name = "phone_no",length=10,nullable = false)
    private long phone_no;
 
-    @Temporal(TemporalType.TIMESTAMP)
+  @Temporal(TemporalType.TIMESTAMP)
    @Column(name = "Created_Date",nullable=false,insertable=false,updatable=false)
    private Date CreatedDate; 
 
-    
+@PrePersist
+private void OnCreate(){
+CreatedDate=new date();
+}
    
   @Embedded
    private Address address;
@@ -53,7 +56,7 @@ public Person(long u_id, String firstName, long phone_no, Date CreatedDate , Add
 	U_id = u_id;
 	this.firstName = firstName;
 	this.phone_no = phone_no;
-	 this.CreatedDate=CreatedDate; 
+	this.CreatedDate=CreatedDate; 
 	this.address = address;
 }
 
