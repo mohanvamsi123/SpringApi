@@ -44,8 +44,7 @@ public class Person {
 
    
   @Embedded
-  @column(name="address",columnDefinition = "LONGVARBINARY")
-   private Address address;
+  private Address address;
   public Person()
   {
 	  
