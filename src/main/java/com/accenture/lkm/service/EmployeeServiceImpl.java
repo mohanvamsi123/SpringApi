@@ -105,11 +105,11 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
 	@Override
-	public void addPerson(Personbean p) {
+	public void addPerson(Person p) {
 		
-		Person ue = new Person();
-		BeanUtils.copyProperties(p, ue);
-		e.save(ue);
+		// Person ue = new Person();
+		// BeanUtils.copyProperties(p, ue);
+		e.save(p);
 
 		
 	}
