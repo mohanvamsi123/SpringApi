@@ -12,14 +12,13 @@ import javax.persistence.UniqueConstraint;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.lang.*;
-import lombok.Data;
 
 import java.util.Date;
 
 
 @Entity(name="Person")
 @Table(uniqueConstraints= {@UniqueConstraint(columnNames= {"first_name","phone_no"})})
-@Data
+
 public class Person {
 	
 	
