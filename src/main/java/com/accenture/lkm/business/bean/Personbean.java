@@ -57,12 +57,12 @@ public class Personbean {
 		this.phone_no = phone_no;
 	}
 
-	public String getCreatedDate()
+	public Date getCreatedDate()
 {
 return CreatedDate;
 }
 
-public void setCreatedDate(String CreatedDate)
+public void setCreatedDate(Date CreatedDate)
 {
 this.CreatedDate=CreatedDate;
 }
