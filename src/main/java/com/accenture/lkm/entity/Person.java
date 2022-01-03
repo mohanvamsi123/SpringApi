@@ -32,7 +32,7 @@ public class Person {
 	
    
    
-   @Column(name = "phone_no",length=10,nullable = true)
+   @Column(name = "phone_no",length=10,nullable = false)
    private long phone_no;
 
    @Temporal(TemporalType.TIMESTAMP)
@@ -40,7 +40,7 @@ public class Person {
    private Date CreatedDate;
 
     @PrePersist
-    private void OnCreate(){
+    private void onCreate(){
     CreatedDate=new Date();
      }
    
@@ -90,6 +90,11 @@ public void setPhone_no(long phone_no) {
 public Date getCreatedDate()
 {
 return CreatedDate;
+}
+
+public void setCreatedDate(Date CreatedDate)
+{
+this.CreatedDate=CreatedDate;
 }
 
 
