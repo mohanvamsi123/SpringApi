@@ -43,9 +43,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 			BeanUtils.copyProperties(ue, b);
 			PersonListModel.add(b);
 	
-		return PersonListModel;
 
 	}
+	return PersonListModel;
 	}
 
 
