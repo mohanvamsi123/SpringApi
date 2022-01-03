@@ -36,7 +36,7 @@ public class Item {
 	@Column(columnDefinition="boolean default True")
     private boolean Item_Status;
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(TemporalType.DATE)
 	 private Date CreatedDate;
 
 	
