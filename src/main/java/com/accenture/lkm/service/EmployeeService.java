@@ -18,7 +18,7 @@ public interface EmployeeService {
 	List<Personbean> getdetails();
 
 	
-	void addPerson(Personbean p);
+	void addPerson(Person p);
 
 	ResponseEntity<Person> Update(Person p,long id);
 
