@@ -33,17 +33,17 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 
 	
-	public List<Personbean> getdetails() {
+	public List<Person> getdetails() {
 		
 		List<Person> PersonListEntity= e.findAll();
-		List<Personbean>PersonListModel=new ArrayList<Personbean>();
+		/*List<Personbean>PersonListModel=new ArrayList<Personbean>();
 		
 		for(Person ue: PersonListEntity) {
 			Personbean b=new Personbean();
 			BeanUtils.copyProperties(ue, b);
-			PersonListModel.add(b);
+			PersonListModel.add(b);*/
 	}
-		return PersonListModel;
+		return PersonListEntity;
 
 	}
 
