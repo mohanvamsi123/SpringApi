@@ -26,7 +26,7 @@ public class Person {
 	private long U_id;
     
 	
-   @Column(name = "first_name", nullable = true)
+   @Column(name = "first_name", nullable = false)
    private String firstName;
     
 	
