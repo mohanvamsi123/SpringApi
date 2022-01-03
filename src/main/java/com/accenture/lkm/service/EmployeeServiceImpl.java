@@ -3,7 +3,7 @@ package com.accenture.lkm.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.sql.*;
 
 import org.springframework.beans.BeanUtils;
@@ -107,8 +107,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	public void addPerson(Person p) {
-		long millis=System.currentTimeMillis();
-		java.sql.Date date=new java.sql.Date(millis);
+		
+		java.util.Date date=new Date(System.currentTimeMillis());
 		p.setCreatedDate(millis);
 		
 		// Person ue = new Person();
