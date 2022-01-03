@@ -26,13 +26,13 @@ public class Person {
 	private long U_id;
     
 	
-   @Column(name = "first_name", nullable = false)
+   @Column(name = "first_name", nullable = true)
    private String firstName;
     
 	
    
    
-   @Column(name = "phone_no",length=10,nullable = false)
+   @Column(name = "phone_no",length=10,nullable = true)
    private long phone_no;
 
    @Temporal(TemporalType.TIMESTAMP)
