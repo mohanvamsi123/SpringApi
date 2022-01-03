@@ -20,7 +20,7 @@ public class Personbean {
 	   private long phone_no;
 	   
 	   
-	 private Date CreatedDate;
+	 private String CreatedDate;
 	   private Address address;
 
 
@@ -57,12 +57,12 @@ public class Personbean {
 		this.phone_no = phone_no;
 	}
 
-	public Date getCreatedDate()
+	public String getCreatedDate()
 {
 return CreatedDate;
 }
 
-public void setCreatedDate(Date CreatedDate)
+public void setCreatedDate(String CreatedDate)
 {
 this.CreatedDate=CreatedDate;
 }
