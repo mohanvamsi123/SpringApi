@@ -20,7 +20,7 @@ public class Personbean {
 	   private long phone_no;
 	   
 	   
-	 private Date CreatedDate;
+	 //private Date CreatedDate;
 	   private Address address;
 
 
@@ -57,7 +57,7 @@ public class Personbean {
 		this.phone_no = phone_no;
 	}
 
-	public Date getCreatedDate()
+/*	public Date getCreatedDate()
 {
 return CreatedDate;
 }
@@ -66,7 +66,7 @@ public void setCreatedDate(Date CreatedDate)
 {
 this.CreatedDate=CreatedDate;
 }
-
+*/
 
 	public Address getAddress() {
 		return address;
@@ -90,12 +90,12 @@ this.CreatedDate=CreatedDate;
 	   }
 
 
-	public Personbean(Long u_id, String firstName, long phone_no,Date CreatedDate, Address address) {
+	public Personbean(Long u_id, String firstName, long phone_no,/*Date CreatedDate,*/ Address address) {
 		super();
 		U_id = u_id;
 		this.firstName = firstName;
 		this.phone_no = phone_no;
-		this.CreatedDate=CreatedDate;
+	//	this.CreatedDate=CreatedDate;
 		this.address = address;
 	}
 	}
