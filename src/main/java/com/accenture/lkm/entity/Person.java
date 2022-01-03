@@ -1,18 +1,17 @@
 package com.accenture.lkm.entity;
-
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.*;
-
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.lang.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 
@@ -40,7 +39,6 @@ public class Person {
 
    @DateTimeFormat(pattern="yyyy-MM-dd")
    private Date CreatedDate;
-
 
    
   @Embedded
