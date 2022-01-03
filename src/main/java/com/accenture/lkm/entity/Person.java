@@ -27,13 +27,13 @@ public class Person {
 	private long U_id;
     
 	
-   @Column(name = "first_name", nullable = false)
+   @Column(name = "first_name", nullable = false,unique=true)
    private String firstName;
     
 	
    
    
-   @Column(name = "phone_no",length=10,nullable = false)
+   @Column(name = "phone_no",length=10,nullable = false,unique=true)
    private long phone_no;
 
 
