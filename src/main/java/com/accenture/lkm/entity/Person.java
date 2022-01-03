@@ -35,14 +35,12 @@ public class Person {
    @Column(name = "phone_no",length=10,nullable = false)
    private long phone_no;
 
-  @Temporal(TemporalType.TIMESTAMP)
+  
    @Column(name = "Created_Date",nullable=false)
-   private Date CreatedDate; 
+   @Temporal(TemporalType.DATE)
+   private Date CreatedDate=new Date(System.currentTimeMills()); 
 
-@PrePersist
-private void OnCreate(){
-CreatedDate=new date();
-}
+
    
   @Embedded
    private Address address;
