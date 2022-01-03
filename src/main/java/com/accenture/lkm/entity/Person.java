@@ -38,8 +38,8 @@ public class Person {
 
 
    @DateTimeFormat(pattern="yyyy-MM-dd")
-    @Temporal(TemporalType.TIMESTAMP)
-   private Date CreatedDate;
+    @Temporal(TemporalType.DATE)
+   private Date CreatedDate=;
 
    
   @Embedded
