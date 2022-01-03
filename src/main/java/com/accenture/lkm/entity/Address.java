@@ -6,15 +6,8 @@ import javax.persistence.Table;
 @Embeddable
 public class Address {
 	
-	     
-	   
-	    
-	     
-	    
-	    private String city;
-	     
-	   
-	    private String shopname;
+	     private String city;
+	     private String shopname;
 	     
 	   
 	    

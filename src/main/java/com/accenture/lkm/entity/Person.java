@@ -39,6 +39,7 @@ public class Person {
 
 
    @Temporal(TemporalType.DATE)
+   @Column(name="Date")
    private Date CreatedDate=new Date(System.currentTimeMillis()); 
 
 
