@@ -84,7 +84,7 @@ public void setPhone_no(long phone_no) {
 	this.phone_no = phone_no;
 }
 
-public Date getCreatedDate()
+public String getCreatedDate()
 {
 return CreatedDate;
 }
