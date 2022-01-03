@@ -67,7 +67,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		Person p1 =(e.findById(id));
 				
 				
-	    p1=new Person(id,v.getFirstName(), v.getPhone_no(),  /*v.getCreatedDate(),*/ v.getAddress());
+	    p1=new Person(id,v.getFirstName(), v.getPhone_no(),  v.getCreatedDate(), v.getAddress());
 	    final Person updatedPerson = e.save(p1);
 	    return ResponseEntity.ok(updatedPerson);
 		
