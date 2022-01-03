@@ -42,7 +42,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			Personbean b=new Personbean();
 			BeanUtils.copyProperties(ue, b);
 			PersonListModel.add(b);*/
-	}
+	
 		return PersonListEntity;
 
 	}
