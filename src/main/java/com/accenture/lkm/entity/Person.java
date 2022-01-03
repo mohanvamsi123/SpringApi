@@ -41,7 +41,7 @@ public class Person {
 
     @PrePersist
     private void OnCreate(){
-    CreatedDate=new date();
+    CreatedDate=new Date();
      }
    
    
