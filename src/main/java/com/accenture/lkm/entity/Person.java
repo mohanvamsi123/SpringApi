@@ -18,6 +18,7 @@ import java.util.Date;
 
 @Entity(name="Person")
 @Table(uniqueConstraints= {@UniqueConstraint(columnNames= {"first_name","phone_no"})})
+@Data
 public class Person {
 	
 	
