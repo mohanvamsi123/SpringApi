@@ -109,7 +109,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	public void addPerson(Person p) {
 		
 		java.util.Date date=new Date(System.currentTimeMillis());
-		p.setCreatedDate(millis);
+		p.setCreatedDate(date);
 		
 		// Person ue = new Person();
 		// BeanUtils.copyProperties(p, ue);
