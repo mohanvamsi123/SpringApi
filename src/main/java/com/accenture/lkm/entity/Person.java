@@ -12,6 +12,7 @@ import javax.persistence.UniqueConstraint;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import java.lang.*;
+import lombok.Data;
 
 import java.util.Date;
 
