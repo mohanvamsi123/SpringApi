@@ -40,15 +40,15 @@ public class EmployeeController {
 	
 	
 	@GetMapping(value="emp/controller/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Person>> getdetails() 
+	public ResponseEntity<List<Personbean>> getdetails() 
 	{
 		
 	if((employeeService.getdetails()).isEmpty()) {
 		System.out.println("no data found");
-		return new ResponseEntity<List<Person>>(HttpStatus.NO_CONTENT);
+		return new ResponseEntity<List<Personbean>>(HttpStatus.NO_CONTENT);
 		
 	}else {
-		return new ResponseEntity<List<Person>>(employeeService.getdetails(), HttpStatus.OK);
+		return new ResponseEntity<List<Personbean>>(employeeService.getdetails(), HttpStatus.OK);
 	}		
 }
 	
