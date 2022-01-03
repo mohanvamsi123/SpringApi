@@ -108,9 +108,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public void addPerson(Person p) {
 		
-		java.util.Date date=new java.util.Date(System.currentTimeMillis());
-		System.out.println(date);
-		p.setCreatedDate(date);
+		//java.util.Date date=new java.util.Date(System.currentTimeMillis());
+		//System.out.println(date);
+		//p.setCreatedDate(date);
 		
 		// Person ue = new Person();
 		// BeanUtils.copyProperties(p, ue);

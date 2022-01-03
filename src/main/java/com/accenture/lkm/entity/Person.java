@@ -40,7 +40,7 @@ public class Person {
    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
 	@Column(insertable=false)
-   private Date CreatedDate;
+   private Date CreatedDate=new java.util.Date(System.currentTimeMillis());;
 
    
   @Embedded
