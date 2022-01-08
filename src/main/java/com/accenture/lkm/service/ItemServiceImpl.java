@@ -87,11 +87,11 @@ public class ItemServiceImpl implements ItemService {
 	{
     
 	  List<Item> PersonListEntity= i.findAll();
-        Item k;
+       
 	  for(Item ue: PersonListEntity) {
 			if(ue.getItem_Id()==id)
 			{ 
-				k=(Item)((Item)ue).clone();
+				Item k=(Item)((Item)ue).clone();
 				break;
 			}
 	  }
