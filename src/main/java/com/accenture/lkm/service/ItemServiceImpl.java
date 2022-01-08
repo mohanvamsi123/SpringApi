@@ -87,7 +87,7 @@ public class ItemServiceImpl implements ItemService {
 	{
     
 	  List<Item> PersonListEntity= i.findAll();
-      Item k;
+      Item k=new Item();
 	  for(Item ue: PersonListEntity) {
 			if(ue.getItem_Id()==id)
 			{ 
