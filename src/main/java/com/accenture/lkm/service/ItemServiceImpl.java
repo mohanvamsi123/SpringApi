@@ -96,7 +96,7 @@ public class ItemServiceImpl implements ItemService {
 			}
 	  }
 
-	  i.deleteByID(Long id);
+	  i.deleteByID(id);
 
 	   k.isItem_Status()=true?
 	   k.setItem_Status(false):k.setItem_Status(true);
