@@ -41,7 +41,7 @@ public class Item extends Auditable<String>{
     private String Item_Name;
 	@Column(columnDefinition="boolean default True")
     private boolean Item_Status;
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    
   
 
 	
