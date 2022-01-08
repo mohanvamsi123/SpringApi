@@ -68,7 +68,7 @@ public class ItemController {
 		
 
 	    itemService.PostItems(p);
-		return "sucess";
+		return "{\"response\":\"successfully added item.\"}";;
 		
 		
 		
