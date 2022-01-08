@@ -19,12 +19,16 @@ import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
 
 import javax.persistence.UniqueConstraint;
+import org.hibernate.annotations.GenericGenerator;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
 
 
 @Entity(name="Item")
 @Table(uniqueConstraints= {@UniqueConstraint(columnNames= {"Item_Name"})})
-
-public class Item {
+@EntityListeners(AuditingEntityListener.class)
+public class Item extends Auditable<String>{
 	
 	
 	@Id
@@ -36,8 +40,7 @@ public class Item {
 	@Column(columnDefinition="boolean default True")
     private boolean Item_Status;
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
-	 private Date CreatedDate;
+  
 
 	
 	
@@ -60,27 +63,19 @@ public class Item {
 	public void setItem_Status(boolean item_Status) {
 		Item_Status = item_Status;
 	}
-	public Date getCreatedDate()
-    {
-   return CreatedDate;
-}
-
-public void setCreatedDate(Date CreatedDate)
-{
-this.CreatedDate=CreatedDate;
-} 
+	
 
 	
 
 	
 	
-	public Item(long item_Id, String item_Name, boolean item_Status,Date CreatedDate) {
+	public Item(long item_Id, String item_Name, boolean item_Status) {
 		super();
 		
 		Item_Id = item_Id;
 		Item_Name = item_Name;
 		Item_Status = item_Status;
-		this.CreatedDate=CreatedDate;
+		
 		
 		
 	}

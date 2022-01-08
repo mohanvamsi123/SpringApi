@@ -35,27 +35,27 @@ public class ItemController {
 	private ItemService itemService;
 	
 	@GetMapping(value="/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<ItemBean>> getdetails() 
+	public ResponseEntity<List<Item>> getdetails() 
 	{
 		if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
-			return new ResponseEntity<List<ItemBean>>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<List<Item>>(HttpStatus.NO_CONTENT);
 			
 		}else {
-			return new ResponseEntity<List<ItemBean>>(itemService.getItems(), HttpStatus.OK);
+			return new ResponseEntity<List<Item>>(itemService.getItems(), HttpStatus.OK);
 		}		
 	}	
 	
 	
 	@GetMapping(value="/getDetails/{status}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<ItemBean>> getdetails(@PathVariable("status") String status) 
+	public ResponseEntity<List<Item>> getdetails(@PathVariable("status") String status) 
 	{
 		if((itemService.getItemsByStatus(status)).isEmpty()) {
 			System.out.println("no data found");
-			return new ResponseEntity<List<ItemBean>>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<List<Item>>(HttpStatus.NO_CONTENT);
 			
 		}else {
-			return new ResponseEntity<List<ItemBean>>(itemService.getItemsByStatus(status), HttpStatus.OK);
+			return new ResponseEntity<List<Item>>(itemService.getItemsByStatus(status), HttpStatus.OK);
 		}		
 	}	
 

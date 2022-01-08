@@ -21,18 +21,18 @@ public class ItemServiceImpl implements ItemService {
 	private ItemDAO i;
 
 	@Override
-	public List<ItemBean> getItems() {
+	public List<Item> getItems() {
 		
 		
 		List<Item> PersonListEntity= i.findAll();
-		List<ItemBean>PersonListModel=new ArrayList<ItemBean>();
+	/*	List<ItemBean>PersonListModel=new ArrayList<ItemBean>();
 		
 		for(Item ue: PersonListEntity) {
 			ItemBean b=new ItemBean();
 			BeanUtils.copyProperties(ue, b);
 			PersonListModel.add(b);
-	}
-		return PersonListModel;
+	} */
+		return PersonListEntity;
 
 	
 	}
@@ -56,7 +56,7 @@ public class ItemServiceImpl implements ItemService {
 
 
 
-	public List<ItemBean> getItemsByStatus(String status) {
+	public List<Item> getItemsByStatus(String status) {
 		List<Item> PersonListEntity;
 		
 		if(status.equals("active"))
@@ -73,14 +73,14 @@ public class ItemServiceImpl implements ItemService {
 			
 		
 	
-		List<ItemBean>PersonListModel=new ArrayList<ItemBean>();
+	/*	List<ItemBean>PersonListModel=new ArrayList<ItemBean>();
 		
 		for(Item ue: PersonListEntity) {
 			ItemBean b=new ItemBean();
 			BeanUtils.copyProperties(ue, b);
 			PersonListModel.add(b);
-	}
-		return PersonListModel;
+	} */
+		return PersonListEntity;
 	}
 
 

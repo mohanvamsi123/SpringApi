@@ -12,13 +12,13 @@ public interface ItemService {
 	
 	
 
-	List<ItemBean> getItems();
+	List<Item> getItems();
 	 
 	void PostItems(Item p);
 
 	
 
-	List<ItemBean> getItemsByStatus(String status);
+	List<Item> getItemsByStatus(String status);
 
 	
 
