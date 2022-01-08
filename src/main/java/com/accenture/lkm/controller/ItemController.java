@@ -26,7 +26,7 @@ import com.accenture.lkm.entity.Item;
 import com.accenture.lkm.entity.Person;
 import com.accenture.lkm.service.ItemService;
 
-
+@CrossOrigin
 @RestController
 @RequestMapping("/item/controller")
 public class ItemController {
