@@ -42,7 +42,7 @@ public class ItemController {
 			return new ResponseEntity<List<ItemBean>>(HttpStatus.NO_CONTENT);
 			
 		}else {
-			return new ResponseEntity<List<ItemBean>>(itemService.getItems(), HttpStatus.FOUND);
+			return new ResponseEntity<List<ItemBean>>(itemService.getItems(), HttpStatus.OK);
 		}		
 	}	
 	
@@ -55,7 +55,7 @@ public class ItemController {
 			return new ResponseEntity<List<ItemBean>>(HttpStatus.NO_CONTENT);
 			
 		}else {
-			return new ResponseEntity<List<ItemBean>>(itemService.getItemsByStatus(status), HttpStatus.FOUND);
+			return new ResponseEntity<List<ItemBean>>(itemService.getItemsByStatus(status), HttpStatus.OK);
 		}		
 	}	
 
