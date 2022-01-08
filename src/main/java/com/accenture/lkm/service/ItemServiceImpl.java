@@ -91,7 +91,7 @@ public class ItemServiceImpl implements ItemService {
 	  for(Item ue: PersonListEntity) {
 			if(ue.getItem_Id()==id)
 			{ 
-				k=(Item)ue.clone();
+				k=(Item)((Item)ue).clone();
 				break;
 			}
 	  }
