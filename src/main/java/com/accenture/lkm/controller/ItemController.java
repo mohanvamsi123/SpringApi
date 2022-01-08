@@ -90,10 +90,12 @@ public class ItemController {
 	if(d=="yes")
 	{
 	
-  return "{\"response\":\"successfully updated item,.\"}";}
+  return "{\"response\":\"successfully updated item,.\"}";
+  }
 
-	}
+	
 	else {
-		return "{\"response\":\" sorry item not available,.\"}";}
+		return "{\"response\":\" sorry item not available,.\"}";
+		}
 	}
 }
