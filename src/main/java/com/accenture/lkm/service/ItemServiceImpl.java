@@ -96,7 +96,7 @@ public class ItemServiceImpl implements ItemService {
 			}
 	  }
 
-	  i.deleteByID(id);
+	  i.delete(id);
 
 	   if(k.isItem_Status())
 	   {
