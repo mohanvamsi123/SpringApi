@@ -85,6 +85,7 @@ public class ItemServiceImpl implements ItemService {
 
 	public String Update(long id)
 	{
+		System.out.print("up");
     
 	  List<Item> PersonListEntity= i.findAll();
       Item k=new Item();

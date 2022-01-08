@@ -82,7 +82,7 @@ public class ItemController {
 	
 	@PutMapping(value = "/putDetails/{id}")
 	public String  putdetails(@PathVariable(value = "id") long id){
-		 
+		 System.out.print("entr");
 	String d=itemService.Update(id);
 
 
