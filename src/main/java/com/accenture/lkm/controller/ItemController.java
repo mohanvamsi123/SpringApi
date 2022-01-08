@@ -75,16 +75,20 @@ public class ItemController {
 		
 	}
 	
-	@PutMapping(value = "/putDetails")
-	public String  putdetails(@RequestBody Item p){
-		 
-		 itemService.PostItems(p);
-		 return "{\"response\":\"successfully updated item.\"}";
-		
 			
 	
 
 	
-	}
+	
+	@PutMapping(value = "/putDetails/{id}")
+	public String  putdetails(@PathVariable(value = "id") long id){
+		 
+	String d=itemService.Update(p,id);
 
+	if(d="yes")
+	{
+	
+  return "{\"response\":\"successfully updated item,.\"}";}
+
+	}
 }

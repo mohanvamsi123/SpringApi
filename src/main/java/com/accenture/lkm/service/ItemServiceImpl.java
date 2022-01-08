@@ -83,6 +83,14 @@ public class ItemServiceImpl implements ItemService {
 		return PersonListEntity;
 	}
 
+	public String Update(long id)
+	{
+      List<Item> PersonListEntity= i. update(id); 
+	  return "yes";
+
+
+	}
+
 
 
 	

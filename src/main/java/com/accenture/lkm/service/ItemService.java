@@ -21,7 +21,7 @@ public interface ItemService {
 	List<Item> getItemsByStatus(String status);
 
 	
-
+       String Update(long id);
 	
 
 	//List<ItemBean> getItemsByStatus(String status);
