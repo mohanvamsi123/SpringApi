@@ -98,22 +98,23 @@ public class ItemServiceImpl implements ItemService {
 
 	  i.deleteByID(id);
 
-	   k.isItem_Status()
-	   k.setItem_Status(false):k.setItem_Status(true);
-	   		
+	   if(k.isItem_Status())
+	   {
+	   k.setItem_Status(false);
+	   }
+	   else
+	   {k.setItem_Status(true);
+	   }
 		
 	   i.save(k);
 		
 	  
-	if( k.isItem_Status()=true)
-	{
+	
 		return "yes";
+	
 	}
-	else
-	{
-		return "no";
 
-	}
+	
 
 
 
