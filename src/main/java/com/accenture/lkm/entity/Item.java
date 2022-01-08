@@ -24,7 +24,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 
-import com.accenture.lkm.entity.Auditable;
+
 
 
 @Entity(name="Item")
