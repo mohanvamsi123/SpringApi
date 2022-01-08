@@ -95,9 +95,9 @@ public class ItemServiceImpl implements ItemService {
 				break;
 			}
 	  }
-
+      System.out.print("up");
 	  i.delete(id);
-
+      System.out.print("down");
 	   if(k.isItem_Status())
 	   {
 	   k.setItem_Status(false);
