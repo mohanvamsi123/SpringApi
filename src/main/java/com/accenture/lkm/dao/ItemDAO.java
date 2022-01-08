@@ -37,7 +37,7 @@ public interface ItemDAO extends JpaRepository<Item, Long>{
     @Transactional
 	@Modifying
 	@Query("delete from Item p  where p.Item_Id=:id")
-	delete(@Param("id") long id);
+	void delete(@Param("id") long id);
 	
 
 
