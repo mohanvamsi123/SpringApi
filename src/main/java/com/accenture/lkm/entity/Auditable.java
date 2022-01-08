@@ -19,12 +19,12 @@ public abstract class Auditable<U>  {
     @CreatedDate
     @Column(name = "created_at", nullable = false, updatable = false)
     @Temporal(TIMESTAMP)
-    private Date createdAt;
+    protected Date createdAt;
 
     @LastModifiedDate
     @Column(name = "updated_at")
     @Temporal(TIMESTAMP)
-    private Date updatedAt;
+    protected Date updatedAt;
 
     public Date getCreatedAt() {
         return this.createdAt;
