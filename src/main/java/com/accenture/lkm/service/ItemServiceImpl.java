@@ -85,8 +85,37 @@ public class ItemServiceImpl implements ItemService {
 
 	public String Update(long id)
 	{
-      List<Item> PersonListEntity= i. update(id); 
-	  return "yes";
+    
+	  List<Item> PersonListEntity= i.findAll();
+        Item k=new Item();
+	  for(Item ue: PersonListEntity) {
+			if(ue.getItem_Id()==id)
+			{ 
+				k=ue;
+				break;
+			}
+	  }
+
+	  i.deleteByID(Long id);
+
+	   k.isItem_Status()=true?
+	   k.setItem_Status(false):k.setItem_Status(true);
+	   		
+		
+	   i.save(k);
+		
+	  
+	if( k.isItem_Status()=true)
+	{
+		return "yes";
+	}
+	else
+	{
+		return "no";
+
+	}
+
+
 
 
 	}

@@ -83,12 +83,17 @@ public class ItemController {
 	@PutMapping(value = "/putDetails/{id}")
 	public String  putdetails(@PathVariable(value = "id") long id){
 		 
-	String d=itemService.Update(p,id);
+	String d=itemService.Update(id);
 
-	if(d="yes")
+
+
+	if(d=="yes")
 	{
 	
   return "{\"response\":\"successfully updated item,.\"}";}
 
+	}
+	else {
+		return "{\"response\":\" sorry item not available,.\"}";}
 	}
 }

@@ -21,7 +21,7 @@ public interface ItemDAO extends JpaRepository<Item, Long>{
 	@Query("select i from Item i where i.Item_Status= ?1")
 	List<Item> Find(boolean status); 
 
-   @Modifying
+   /*@Modifying
    @Transactional
    @Query(
 	   "UPDATE Item i 
@@ -31,7 +31,7 @@ public interface ItemDAO extends JpaRepository<Item, Long>{
                 ELSE  (i.Item_Status)
             END 
 		WHERE   i.Item_Status IN (true,false)")
-   void update(long id); 
+   void update(long id); */
 
 
 	
