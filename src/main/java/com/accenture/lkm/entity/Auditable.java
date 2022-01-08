@@ -4,6 +4,7 @@ import java.util.Date;
 import javax.persistence.EntityListeners;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Temporal;
+import javax.persistence.Column;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -22,7 +23,7 @@ public abstract class Auditable<U>  {
     @LastModifiedDate
     @Column(name = "updated_at")
     @Temporal(TIMESTAMP)
-    private LocalDateTime updatedAt;
+    private Date updatedAt;
 
     public Date getCreatedAt() {
         return this.createdAt;
@@ -32,11 +33,11 @@ public abstract class Auditable<U>  {
         this.createdAt = createdAt;
     }
 
-    public LocalDateTime getUpdatedAt() {
+    public Date getUpdatedAt() {
         return this.updatedAt;
     }
 
-    public void setUpdatedAt(LocalDateTime updatedAt) {
+    public void setUpdatedAt(Date updatedAt) {
         this.updatedAt = updatedAt;
     }
 
