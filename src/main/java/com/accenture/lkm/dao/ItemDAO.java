@@ -23,13 +23,14 @@ public interface ItemDAO extends JpaRepository<Item, Long>{
 
    @Modifying
    @Transactional
-   @Query("UPDATE Item i 
-         SET i.Item_Status = CASE  
-            WHEN ( i.Item_Status = true and i.Item_Id= ?1 ) THEN false
-            WHEN ( i.Item_Status = false and i.Item_Id= ?1 ) THEN true
-
-            ELSE  (i.Item_Status)
-         END ")
+   @Query(
+	   "UPDATE Item i 
+        SET i.Item_Status = CASE  
+		        WHEN ( i.Item_Status = true and i.Item_Id= ?1 ) THEN false
+                WHEN ( i.Item_Status = false and i.Item_Id= ?1 ) THEN true
+                ELSE  (i.Item_Status)
+            END 
+		WHERE   i.Item_Status IN (true,false)")
    void update(long id); 
 
 
