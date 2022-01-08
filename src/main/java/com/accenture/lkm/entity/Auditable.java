@@ -1,3 +1,4 @@
+package com.accenture.lkm.entity;
 import static javax.persistence.TemporalType.TIMESTAMP;
 import java.util.Date;
 
