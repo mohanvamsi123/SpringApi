@@ -68,7 +68,7 @@ public class ItemController {
 		
 
 	    itemService.PostItems(p);
-		return "{\"response\":\"successfully added item.\"}";;
+	    return "{\"response\":\"successfully added item.\"}";
 		
 		
 		
@@ -79,7 +79,7 @@ public class ItemController {
 	public String  putdetails(@RequestBody Item p){
 		 
 		 itemService.PostItems(p);
-		 return "success";
+		 return "{\"response\":\"successfully updated item.\"}";
 		
 			
 	
