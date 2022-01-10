@@ -23,23 +23,23 @@ public class Price {
 
 public int getId()   
 {  
-return id;  
+return Id;  
 }  
 public void setId(int id)   
 {  
-this.id = id;  
+Id = id;  
 }  
 public double getItem_Price()   
 {  
-return Item_price;  
+return Item_Price;  
 }  
-public void setItem_Price(double Item_Price)   
+public void setItem_Price(double Item_price)   
 {  
-Item_Price = Item_Price;  
+Item_Price = Item_price;  
 }  
 public Item getItem()   
 {  
-return Item;  
+return item;  
 }  
 
 
