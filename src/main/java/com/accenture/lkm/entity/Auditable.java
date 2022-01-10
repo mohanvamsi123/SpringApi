@@ -2,6 +2,7 @@ package com.accenture.lkm.entity;
 import static javax.persistence.TemporalType.TIMESTAMP;
 import java.util.Date;
 
+
 import javax.persistence.*;
 //import javax.persistence.MappedSuperclass;
 //import javax.persistence.Temporal;
@@ -20,18 +21,18 @@ public abstract class Auditable<U>  {
     //@CreatedDate
     @Column(name = "created_at",columnDefinition="DATE DEFAULT CURRENT_DATE")
     // @Temporal(TIMESTAMP)
-    protected Date createdAt;
+    protected java.sql.Date createdAt;
 
     @LastModifiedDate
     @Column(name = "updated_at",insertable=false)
     @Temporal(TIMESTAMP)
     protected Date updatedAt;
 
-    public Date getCreatedAt() {
+    public java.sql.Date getCreatedAt() {
         return this.createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(java.sql.Date createdAt) {
         this.createdAt = createdAt;
     }
 
