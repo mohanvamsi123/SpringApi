@@ -1,6 +1,6 @@
 package com.accenture.lkm.entity;
 import static javax.persistence.TemporalType.TIMESTAMP;
-import java.util.Date;
+import java.sql.Date;
 
 import javax.persistence.*;
 //import javax.persistence.MappedSuperclass;
@@ -17,7 +17,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class Auditable<U>  {
-    @CreatedDate
+    //@CreatedDate
     @Column(name = "created_at",columDefinition="DATE DEFAULT CURRENT_DATE",insertable=false)
     // @Temporal(TIMESTAMP)
     protected Date createdAt;
