@@ -18,8 +18,8 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @EntityListeners(AuditingEntityListener.class)
 public abstract class Auditable<U>  {
     @CreatedDate
-    @Column(name = "created_at", nullable=false,updatable=false)
-    @Temporal(TIMESTAMP)
+    @Column(name = "created_at",coloumDefinition="DATE DEFAULT CURRENT_DATE",insertable=false)
+    // @Temporal(TIMESTAMP)
     protected Date createdAt;
 
     @LastModifiedDate
