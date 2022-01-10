@@ -30,6 +30,9 @@ public class Item extends Auditable<String>{
     private String Item_Name;
 	@Column(columnDefinition="boolean default True")
     private boolean Item_Status;
+
+	@OneToMany(mappedBy="Item")  
+     private List<Price> Prices;   
     
   
 
@@ -55,6 +58,14 @@ public class Item extends Auditable<String>{
 		Item_Status = item_Status;
 	}
 	
+	public List<Price> getPrice()   
+{  
+return Prices;  
+}  
+public void setPrice(List<Price> Prices)   
+{  
+this.Prices = Prices;  
+}  
 
 	
 
