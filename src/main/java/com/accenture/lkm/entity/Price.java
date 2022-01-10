@@ -3,7 +3,7 @@ package com.accenture.lkm.entity;
 import javax.persistence.*;  
 
 @Entity(name="Price")
-@Table
+@Table()
 public class Price {
 	
 	
@@ -18,8 +18,8 @@ public class Price {
     
 
     
-    @ManyToOne(fetch=FetchType.LAZY)  
-    private Item item;
+   // @ManyToOne(fetch=FetchType.LAZY)  
+   // private Item item;
 
 
     public Price(long Id,double Item_Price,int Item_Qty)
