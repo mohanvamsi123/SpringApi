@@ -18,8 +18,10 @@ public class Price {
     
 
     
-    @ManyToOne(fetch=FetchType.LAZY)  
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Id", referencedColumnName = "Id") 
     private Item item;
+
 
 
    /* public Price(long Id,double Item_Price,int Item_Qty)

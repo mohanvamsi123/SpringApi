@@ -31,7 +31,8 @@ public class Item extends Auditable<String>{
 	@Column(columnDefinition="boolean default True")
     private boolean Item_Status;
 
-	@OneToMany(mappedBy="Item")  
+	@OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Item_id", referencedColumnName = "Item_id") 
     private List<Price> Prices;   
     
   
