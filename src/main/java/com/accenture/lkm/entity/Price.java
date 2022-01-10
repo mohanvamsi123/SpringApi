@@ -18,8 +18,8 @@ public class Price {
     
 
     
-   // @ManyToOne(fetch=FetchType.LAZY)  
-   // private Item item;
+    @ManyToOne(fetch=FetchType.LAZY)  
+    private Item item;
 
 
     public Price(long Id,double Item_Price,int Item_Qty)
@@ -51,7 +51,7 @@ public void setItem_Price(double Item_price)
 {  
 Item_Price = Item_price;  
 }  
-/* public Item getItem()   
+ public Item getItem()   
 {  
 return item;  
 }  
@@ -60,7 +60,7 @@ return item;
 public void setItem(Item item)   
 {  
 this.item = item;  
-}  */
+}  
 
 public int getItem_Qty()   
 {  
