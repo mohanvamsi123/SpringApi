@@ -82,7 +82,7 @@ this.Prices = Prices;
 		
 	}
 	
-	protected Item()
+	public Item()
 	{
 		
 	}
