@@ -21,11 +21,11 @@ public class Price {
     @ManyToOne(fetch=FetchType.LAZY)  
     private Item item;
 
-public int getId()   
+public long getId()   
 {  
 return Id;  
 }  
-public void setId(int id)   
+public void setId(long id)   
 {  
 Id = id;  
 }  
