@@ -21,6 +21,20 @@ public class Price {
     @ManyToOne(fetch=FetchType.LAZY)  
     private Item item;
 
+
+    public Price(long Id,double Item_Price,int Item_Qty)
+    {
+        
+        this.Id=Id;
+        this.Item_Price=Item_Price;
+        this.Item_Qty=Item_Qty;
+
+    }
+    public Price()
+    {
+        
+    }
+
 public long getId()   
 {  
 return Id;  
