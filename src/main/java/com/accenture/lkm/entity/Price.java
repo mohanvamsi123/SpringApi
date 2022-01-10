@@ -19,7 +19,7 @@ public class Price {
 
     
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Id", referencedColumnName = "Id") 
+    @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
     private Item item;
 
 

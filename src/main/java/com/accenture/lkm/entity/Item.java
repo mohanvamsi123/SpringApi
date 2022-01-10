@@ -31,9 +31,9 @@ public class Item extends Auditable<String>{
 	@Column(columnDefinition="boolean default True")
     private boolean Item_Status;
 
-	@OneToMany(cascade = CascadeType.ALL)
+/*	@OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "Item_id", referencedColumnName = "Item_id") 
-    private List<Price> Prices;   
+    private List<Price> Prices;   */
     
   
 
@@ -59,14 +59,14 @@ public class Item extends Auditable<String>{
 		Item_Status = item_Status;
 	}
 	
-	public List<Price> getPrice()   
+/*	public List<Price> getPrice()   
 {  
 return Prices;  
 }  
 public void setPrice(List<Price> Prices)   
 {  
 this.Prices = Prices;  
-}  
+}   */
 
 	
 
