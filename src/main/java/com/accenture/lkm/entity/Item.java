@@ -32,7 +32,7 @@ public class Item extends Auditable<String>{
     private boolean Item_Status;
 
 	@OneToMany(mappedBy="Item")  
-   private List<Price> Prices;   
+    private List<Price> Prices;   
     
   
 
