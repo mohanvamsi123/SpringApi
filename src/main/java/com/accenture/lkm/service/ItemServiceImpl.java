@@ -42,10 +42,12 @@ public class ItemServiceImpl implements ItemService {
 
 	@Override
 	public void PostItems(Item p) {
-		
+	p.setcreatedAt(new Date());
 		
 		
 	i.save(p);
+
+
 		
 		
 		
