@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import java.util.*;
 
 import com.accenture.lkm.business.bean.ItemBean;
 import com.accenture.lkm.business.bean.Personbean;
@@ -102,9 +103,11 @@ public class ItemServiceImpl implements ItemService {
 	   if(k.isItem_Status())
 	   {
 	   k.setItem_Status(false);
+	   k.setUpdatedAt(new Date());
 	   }
 	   else
 	   {k.setItem_Status(true);
+	   k.setUpdatedAt(new Date());
 	   }
 		
 	   i.save(k);
