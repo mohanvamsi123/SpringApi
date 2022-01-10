@@ -22,7 +22,7 @@ public class Price {
     private Item item;
 
 
-    public Price(long Id,double Item_Price,int Item_Qty)
+   /* public Price(long Id,double Item_Price,int Item_Qty)
     {
         
         this.Id=Id;
@@ -33,7 +33,7 @@ public class Price {
     public Price()
     {
         
-    }
+    } */
 
 public long getId()   
 {  
