@@ -51,7 +51,7 @@ public void setItem_Price(double Item_price)
 {  
 Item_Price = Item_price;  
 }  
-public Item getItem()   
+/* public Item getItem()   
 {  
 return item;  
 }  
@@ -60,7 +60,7 @@ return item;
 public void setItem(Item item)   
 {  
 this.item = item;  
-}  
+}  */
 
 public int getItem_Qty()   
 {  
