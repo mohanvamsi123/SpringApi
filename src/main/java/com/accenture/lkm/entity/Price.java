@@ -22,6 +22,10 @@ public class Price {
     @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
     private Item item;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
+    private Person person;
+
 
 
    /* public Price(long Id,double Item_Price,int Item_Qty)
@@ -57,8 +61,6 @@ Item_Price = Item_price;
 {  
 return item;  
 }  
-
-
 public void setItem(Item item)   
 {  
 this.item = item;  
@@ -72,16 +74,12 @@ public void setItem_Qty(int Item_Qty)
 {  
 this.Item_Qty = Item_Qty;  
 } 
-  
-
-	
-	
-	
-	
-
-	
-	
-
-	
-	
+public Person getPerson()   
+{  
+return person;  
+}  
+public void setItem(Person person)   
+{  
+this.person = person;  
+}  
 }
