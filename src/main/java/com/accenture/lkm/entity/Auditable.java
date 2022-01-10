@@ -18,21 +18,21 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public abstract class Auditable<U>  {
-    //@CreatedDate
+    @CreatedDate
     @Column(name = "created_at",columnDefinition="DATE DEFAULT CURRENT_DATE")
     // @Temporal(TIMESTAMP)
-    protected java.sql.Date createdAt;
+    protected Date createdAt;
 
     @LastModifiedDate
     @Column(name = "updated_at",insertable=false)
     @Temporal(TIMESTAMP)
     protected Date updatedAt;
 
-    public java.sql.Date getCreatedAt() {
+    public Date getCreatedAt() {
         return this.createdAt;
     }
 
-    public void setCreatedAt(java.sql.Date createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 
