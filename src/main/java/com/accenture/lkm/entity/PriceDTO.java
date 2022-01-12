@@ -7,7 +7,7 @@ public class PriceDTO {
 
 
    
-	private double Item_Price;
+	private double Item_price;
     private int Item_Qty;
     private long item;
     private Date createdAt;

@@ -28,7 +28,7 @@ public class Price {
     private Item item;
     
     @DateTimeFormat(pattern="yyyy-MM-dd")
-    @Column(name = "created_at",updatable=false, nullable=false)
+    @Column(name = "created_at",updatable=false)
     @Temporal(TIMESTAMP)
     private Date createdAt;
 
