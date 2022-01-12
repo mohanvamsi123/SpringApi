@@ -65,7 +65,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	public ResponseEntity<Person>Update(Person v,long id) {
 		
-		Person p1 =e.findByu_id(id);
+		Person p1 =e.findByU_id(id);
 				
 				
 	    p1=new Person(id,v.getFirstName(), v.getPhone_no(),  v.getCreatedDate(), v.getAddress());
@@ -82,7 +82,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	public Personbean getUsersById(long id) {
-		Person ue = e.findByu_id(id);
+		Person ue = e.findByU_id(id);
 		Personbean um = new Personbean();
 		BeanUtils.copyProperties(ue, um);
 		return um;
