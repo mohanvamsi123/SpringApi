@@ -2,7 +2,7 @@ package com.accenture.lkm.entity;
 
 import javax.persistence.*;  
 
-
+import static javax.persistence.TemporalType.TIMESTAMP;
 @Entity(name="Price")
 @Table()
 public class Price {
@@ -26,7 +26,7 @@ public class Price {
     @CreatedDate
     @Column(name = "created_at",updatable=false, nullable=false)
     @Temporal(TIMESTAMP)
-    protected Date createdAt;
+    private Date createdAt;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
