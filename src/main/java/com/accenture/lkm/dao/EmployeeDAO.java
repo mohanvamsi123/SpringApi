@@ -9,17 +9,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.accenture.lkm.entity.Person;
 
-public interface EmployeeDAO  extends JpaRepository<Person, Long>{
+public interface EmployeeDAO  extends JpaRepository<Person, long>{
 	
 	@Transactional
 	 @Modifying
 	@Query("delete from Person p  where p.U_id=:id")
 	int delete(@Param("id") int id);
 	
-	//@Query("select p from Person p  where p.U_id=:id")
-	//Person findById(@Param("id") long id);
+	@Query("select p from Person p  where p.U_id=:id")
+	Person findById(@Param("id") long id);
 
-	Person findByU_id(Long id);
+	//Person findByU_id(long id);
 	
 	
 
