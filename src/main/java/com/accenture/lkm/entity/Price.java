@@ -1,11 +1,14 @@
 package com.accenture.lkm.entity;
 
 import javax.persistence.*;  
-
+import java.util.Date;
 import static javax.persistence.TemporalType.TIMESTAMP;
 @Entity(name="Price")
 @Table()
 public class Price {
+
+
+
 	
 	
 	@Id
@@ -89,3 +92,4 @@ public void setItem(Person person)
 this.person = person;  
 }  
 }
+
