@@ -32,17 +32,17 @@ public class PriceController
 	private PriceDAO v;
 
 
- /*   @GetMapping(value="/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value="/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<Price>> getdetails() 
 	{
-		if((itemService.getItems()).isEmpty()) {
+	/*	if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
-			return new ResponseEntity<List<Item>>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<List<Price>>(HttpStatus.NO_CONTENT);
 			
-		}else {
-			return new ResponseEntity<List<Item>>(p, HttpStatus.OK);
-		}		
-	}	*/
+		}else { */
+			return new ResponseEntity<List<Price>>(v.findAll();, HttpStatus.OK);
+		
+	}	
 
     @GetMapping(value="/getDetails/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<String> getdetails(@PathVariable(value = "id") long id) 
