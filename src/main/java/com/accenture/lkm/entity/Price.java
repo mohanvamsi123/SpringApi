@@ -1,5 +1,6 @@
 package com.accenture.lkm.entity;
 
+import org.springframework.data.annotation.*;
 import javax.persistence.*;  
 import java.util.Date;
 import static javax.persistence.TemporalType.TIMESTAMP;
