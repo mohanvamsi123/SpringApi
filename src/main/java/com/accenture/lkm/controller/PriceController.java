@@ -1,8 +1,8 @@
 package com.accenture.lkm.controller;
 
 
-import java.util.Collection;
-import java.util.List;
+
+import java.util.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,8 +28,11 @@ public class PriceController
 
 
     @GetMapping(value="/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<String,String> getdetails(@RequestBody Price p) 
+	public List<String> getdetails(@RequestBody Price p) 
 	{
+        List<String>d=new ArrayList<String>();
+
+
 	/*	if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
 			return new ResponseEntity<List<Item>>(HttpStatus.NO_CONTENT);
@@ -40,7 +43,9 @@ public class PriceController
         } */
         String pname=p.getItem().getItem_Name();
         String iname=p.getPerson().getFirstName();
-        return List<pname,iname>;
+        d.add(pname);
+        d.add(iname);
+        return d;
        // return new ResponseEntity<List<String,String>>(pname,iname, HttpStatus.OK);
      
 	}	
