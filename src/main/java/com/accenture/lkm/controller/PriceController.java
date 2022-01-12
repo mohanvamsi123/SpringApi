@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.accenture.lkm.entity.Price;
-import com.accenture.lkm.dao.PriceDAO;
+import com.accenture.lkm.dao.*;
 
 @CrossOrigin
 @RestController
@@ -80,13 +80,24 @@ public class PriceController
 
     @PostMapping(value = "/postDetails")
 	public String postdetails(@RequestBody Price p) {
-        System.out.print(p.getItem());
-      
+         Person d = EmployeeDAO(p.getPerson_id()); //Get the parent Object
+         Price c  = new Price(); //Create a new Many object
+         Item i=ItemDAO(p.getItem_id());
+
+
+         c.setName(p.getName());
+         c.setPerson(d); // Se
+         c.setItem(i);
+         c.setItem_Price(p.getItem_Price());
+         c.setItem_Qty(p.getItem_Qty());
+         c.setCreatedAt(p.getCreatedAt());
+
+        
 
 
    
 
-        v.save(p);
+        v.save(c);
 		
 		
 		return "success";
