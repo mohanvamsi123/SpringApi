@@ -90,7 +90,7 @@ public class PriceController
          c.setItem(i);
          c.setItem_Price(p.getItem_Price());
          c.setItem_Qty(p.getItem_Qty());
-         c.setCreatedAt(p.getCreatedAt()); */
+         c.setCreatedAt(p.getCreatedAt()); 
 
         
 
