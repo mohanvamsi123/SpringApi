@@ -1,6 +1,6 @@
 package com.accenture.lkm.entity;
 
-
+import java.util.*;
 
 
 public class PriceDTO {
@@ -29,10 +29,7 @@ public class PriceDTO {
     } */
 
 
-public void setId(long id)   
-{  
-Id = id;  
-}  
+ 
 public double getItem_Price()   
 {  
 return Item_Price;  
