@@ -71,7 +71,7 @@ public class PriceController
         v.save(p);
 		
 		
-		return "{\"response\":\"successfully added user.\"}";
+		return "success";
 		
 		
 	}
