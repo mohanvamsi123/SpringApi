@@ -22,7 +22,7 @@ public interface ItemDAO extends JpaRepository<Item, Long>{
 	List<Item> Find(boolean status); 
 
 
-    Optional<Item> findById(Long id);
+   public Item findById(Long id);
 
    /*@Modifying
    @Transactional
