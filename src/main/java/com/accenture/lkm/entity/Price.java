@@ -22,6 +22,11 @@ public class Price {
     @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
     private Item item;
 
+    @CreatedDate
+    @Column(name = "created_at",updatable=false, nullable=false)
+    @Temporal(TIMESTAMP)
+    protected Date createdAt;
+
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
     private Person person;
