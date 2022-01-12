@@ -19,7 +19,7 @@ public interface EmployeeDAO  extends JpaRepository<Person, Long>{
 	@Query("select p from Person p  where p.U_id=:id")
 	Person findById(@Param("id") long id);
 
-	Optional<Person> findById(Long id);
+	Person findById(Long id);
 	
 	
 
