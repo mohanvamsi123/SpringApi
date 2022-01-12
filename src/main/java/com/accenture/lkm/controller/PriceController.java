@@ -65,7 +65,7 @@ public class PriceController
      
 	}	
 
-    @PostMapping(value = "/postDetails",produces=MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/postDetails")
 	public String postdetails(@RequestBody Price p) {
 
         v.save(p);
