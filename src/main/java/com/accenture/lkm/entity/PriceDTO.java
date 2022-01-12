@@ -6,7 +6,7 @@ package com.accenture.lkm.entity;
 public class PriceDTO {
 
 
-    private long Id;
+   
 	private double Item_Price;
     private int Item_Qty;
     private long item;
@@ -28,10 +28,7 @@ public class PriceDTO {
         
     } */
 
-public long getId()   
-{  
-return Id;  
-}  
+
 public void setId(long id)   
 {  
 Id = id;  
