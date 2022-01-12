@@ -30,6 +30,8 @@ public class PriceController
      
 	@Autowired
 	private PriceDAO v;
+    private ItemDAO g;
+    private PersonDAO h;
 
 
     @GetMapping(value="/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
@@ -80,9 +82,9 @@ public class PriceController
 
     @PostMapping(value = "/postDetails")
 	public String postdetails(@RequestBody PriceDTO p) {
-         Person d = EmployeeDAO(p.getPerson()); //Get the parent Object
+         Person d = h.findById(id)
          Price c  = new Price(); //Create a new Many object
-         Item i=ItemDAO(p.getItem());
+         Item i=g.findById(id)
 
 
          

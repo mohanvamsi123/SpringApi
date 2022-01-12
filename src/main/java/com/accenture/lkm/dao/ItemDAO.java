@@ -21,6 +21,9 @@ public interface ItemDAO extends JpaRepository<Item, Long>{
 	@Query("select i from Item i where i.Item_Status= ?1")
 	List<Item> Find(boolean status); 
 
+
+    Optional<Item> findById(Long id);
+
    /*@Modifying
    @Transactional
    @Query(
