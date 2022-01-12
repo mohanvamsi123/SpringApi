@@ -45,7 +45,7 @@ public class PriceController
 
 			return new ResponseEntity<List<Item>>(itemService.getItems(), HttpStatus.OK);
         } */
-        List<Price> PersonListEntity= i.findAll();
+        List<Price> PersonListEntity= v.findAll();
         Price k=new Price();
 	    for(Price ue: PersonListEntity) {
 			if(ue.getId()==id)
@@ -66,7 +66,7 @@ public class PriceController
 	}	
 
     @PostMapping(value = "/postDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public String postdetails(@RequestBody Person p) {
+	public String postdetails(@RequestBody Price p) {
 
         v.save(p);
 		
