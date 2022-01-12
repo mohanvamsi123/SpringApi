@@ -80,6 +80,11 @@ public class PriceController
 
     @PostMapping(value = "/postDetails")
 	public String postdetails(@RequestBody Price p) {
+        System.out.print(p.getItem());
+      
+
+
+   
 
         v.save(p);
 		
