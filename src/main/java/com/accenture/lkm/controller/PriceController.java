@@ -79,8 +79,8 @@ public class PriceController
 	}	
 
     @PostMapping(value = "/postDetails")
-	public String postdetails(@RequestBody Price p) {
-         /* Person d = EmployeeDAO(p.getPerson()); //Get the parent Object
+	public String postdetails(@RequestBody PriceDTO p) {
+         Person d = EmployeeDAO(p.getPerson()); //Get the parent Object
          Price c  = new Price(); //Create a new Many object
          Item i=ItemDAO(p.getItem());
 
@@ -97,7 +97,7 @@ public class PriceController
 
    
 
-        v.save(p);
+        v.save(c);
 		
 		
 		return "success";
