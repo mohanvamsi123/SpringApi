@@ -19,16 +19,20 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.accenture.lkm.entity.Price;
+import com.accenture.lkm.dao.PriceDAO;
 
 @CrossOrigin
 @RestController
 @RequestMapping("/price/controller")
 public class PriceController
 {
+  
+     
+	@Autowired
+	private PriceDAO v;
 
-
-    @GetMapping(value="/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<String> getdetails(@RequestBody Price p) 
+    @GetMapping(value="/getDetails/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<String> getdetails(@PathVariable(value = "id") long id) 
 	{
         List<String>d=new ArrayList<String>();
 
@@ -41,12 +45,38 @@ public class PriceController
 
 			return new ResponseEntity<List<Item>>(itemService.getItems(), HttpStatus.OK);
         } */
-        String pname=p.getItem().getItem_Name();
-        String iname=p.getPerson().getFirstName();
+        List<Price> PersonListEntity= i.findAll();
+        Price k=new Price();
+	    for(Price ue: PersonListEntity) {
+			if(ue.getId()==id)
+			{ 
+				 k=ue;
+				break;
+			}
+	  }
+
+
+        String pname=k.getItem().getItem_Name();
+        String iname=k.getPerson().getFirstName();
         d.add(pname);
         d.add(iname);
         return d;
        // return new ResponseEntity<List<String,String>>(pname,iname, HttpStatus.OK);
      
 	}	
+
+    @PostMapping(value = "/postDetails",produces=MediaType.APPLICATION_JSON_VALUE)
+	public String postdetails(@RequestBody Person p) {
+
+        v.save(p);
+		
+		
+		return "{\"response\":\"successfully added user.\"}";
+		
+		
+	}
+	
+
+    
+
 }
