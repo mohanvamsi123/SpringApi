@@ -40,7 +40,7 @@ public class PriceController
 			return new ResponseEntity<List<Price>>(HttpStatus.NO_CONTENT);
 			
 		}else { */
-			return new ResponseEntity<List<Price>>(v.findAll();, HttpStatus.OK);
+			return new ResponseEntity<List<Price>>(v.findAll(), HttpStatus.OK);
 		
 	}	
 
