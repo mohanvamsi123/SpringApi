@@ -1,4 +1,9 @@
 package com.accenture.lkm.entity;
+import static javax.persistence.TemporalType.TIMESTAMP;
+import java.util.Date;
+
+
+
 
 import javax.persistence.*;  
 
@@ -87,4 +92,11 @@ public void setItem(Person person)
 {  
 this.person = person;  
 }  
+public Date getCreatedAt() {
+    return this.createdAt;
+}
+public void setCreatedAt(Date createdAt) 
+{
+    this.createdAt = createdAt;
+}
 }
