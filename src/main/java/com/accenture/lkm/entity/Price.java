@@ -1,7 +1,7 @@
 package com.accenture.lkm.entity;
 
 import javax.persistence.*;  
-import com.accenture.lkm.entity.Price;
+
 
 @Entity(name="Price")
 @Table()
