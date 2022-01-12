@@ -80,24 +80,24 @@ public class PriceController
 
     @PostMapping(value = "/postDetails")
 	public String postdetails(@RequestBody Price p) {
-         Person d = EmployeeDAO(p.getPerson()); //Get the parent Object
+         /* Person d = EmployeeDAO(p.getPerson()); //Get the parent Object
          Price c  = new Price(); //Create a new Many object
          Item i=ItemDAO(p.getItem());
 
 
          
-         c.setPerson(d); // Se
+         c.setPerson(d); 
          c.setItem(i);
          c.setItem_Price(p.getItem_Price());
          c.setItem_Qty(p.getItem_Qty());
-         c.setCreatedAt(p.getCreatedAt());
+         c.setCreatedAt(p.getCreatedAt()); */
 
         
 
 
    
 
-        v.save(c);
+        v.save(p);
 		
 		
 		return "success";
