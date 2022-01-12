@@ -28,7 +28,7 @@ public class PriceController
 
 
     @GetMapping(value="/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<String,String>> getdetails(@RequestBody Price p) 
+	public List<String,String> getdetails(@RequestBody Price p) 
 	{
 	/*	if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
@@ -40,8 +40,8 @@ public class PriceController
         } */
         String pname=p.getItem().getItem_Name();
         String iname=p.getPerson().getFirstName();
-        //return List<pname,iname>;
-        return new ResponseEntity<List<String,String>>(pname,iname, HttpStatus.OK);
+        return List<pname,iname>;
+       // return new ResponseEntity<List<String,String>>(pname,iname, HttpStatus.OK);
      
 	}	
 }
