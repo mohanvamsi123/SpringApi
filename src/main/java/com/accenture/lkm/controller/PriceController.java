@@ -85,7 +85,7 @@ public class PriceController
          Item i=ItemDAO(p.getItem_id());
 
 
-         c.setName(p.getName());
+         
          c.setPerson(d); // Se
          c.setItem(i);
          c.setItem_Price(p.getItem_Price());
