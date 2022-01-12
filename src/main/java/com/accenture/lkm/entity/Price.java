@@ -1,6 +1,6 @@
 package com.accenture.lkm.entity;
-
-import org.springframework.data.annotation.*;
+import org.springframework.format.annotation.DateTimeFormat;
+//import org.springframework.data.annotation.*;
 import javax.persistence.*;  
 import java.util.Date;
 import static javax.persistence.TemporalType.TIMESTAMP;
@@ -26,8 +26,8 @@ public class Price {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
     private Item item;
-
-    @CreatedDate
+    
+    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Column(name = "created_at",updatable=false, nullable=false)
     @Temporal(TIMESTAMP)
     private Date createdAt;
