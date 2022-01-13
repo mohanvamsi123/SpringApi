@@ -50,10 +50,9 @@ public class PriceController
 	}	
 
     @GetMapping(value="/getDetails/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<String> getdetails(@PathVariable(value = "id") long id) 
+	public List<Price> getdetails(@PathVariable(value = "id") long id) 
 	{
-        List<String>d=new ArrayList<String>();
-
+        
 
 	/*	if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
@@ -64,21 +63,18 @@ public class PriceController
 			return new ResponseEntity<List<Item>>(itemService.getItems(), HttpStatus.OK);
         } */
         List<Price> PersonListEntity= v.findAll();
-        Price k=new Price();
+        List<Price> k=new ArrayList<Price>();
 	    for(Price ue: PersonListEntity) {
-			if(ue.getId()==id)
+			if(ue.getPerson().getU_id() ==id)
 			{ 
-				 k=ue;
-				break;
+				 k.add(ue);
+				
 			}
 	  }
 
 
-        String pname=k.getItem().getItem_Name();
-        String iname=k.getPerson().getFirstName();
-        d.add(pname);
-        d.add(iname);
-        return d;
+        
+        return k;
        // return new ResponseEntity<List<String,String>>(pname,iname, HttpStatus.OK);
      
 	}	
