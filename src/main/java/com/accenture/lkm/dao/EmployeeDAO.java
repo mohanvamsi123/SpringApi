@@ -17,7 +17,9 @@ public interface EmployeeDAO  extends JpaRepository<Person, Long>{
 	void delete(@Param("id") int id);
 	
 	@Query("select p from Person p  where p.U_id=:id")
-	Person findById(@Param("id") long id);
+	Person findById(@Param("id") long id){
+		System.out.println(id);
+	}
 
 	//Person findByU_id(long id);
 	
