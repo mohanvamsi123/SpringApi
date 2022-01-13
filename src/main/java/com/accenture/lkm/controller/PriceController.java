@@ -82,9 +82,11 @@ public class PriceController
 
     @PostMapping(value = "/postDetails")
 	public String postdetails(@RequestBody PriceDTO p) {
-         Person d = h.findById(p.getPerson());
-         Price c  = new Price(); //Create a new Many object
-         Item i=g.findById(p.getItem());
+		 Person d=null;
+		 Item i=null;
+         d = h.findById(p.getPerson());
+         Price c  = new Price(); 
+         i=g.findById(p.getItem());
 
         System.out.println("hi");
         System.out.println(i.getItem_Id());
