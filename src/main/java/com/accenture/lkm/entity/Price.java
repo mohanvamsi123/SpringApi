@@ -24,7 +24,7 @@ public class Price {
 
     
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id",nullable=false) 
+    @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
     private Item item;
     
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -33,7 +33,7 @@ public class Price {
     private Date createdAt;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "Person_id", referencedColumnName = "U_id",nullable=false) 
+    @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
     private Person person;
 
 

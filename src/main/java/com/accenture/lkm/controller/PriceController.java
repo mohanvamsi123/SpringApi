@@ -86,6 +86,7 @@ public class PriceController
          Price c  = new Price(); //Create a new Many object
          Item i=g.findById(p.getItem());
 
+        System.out.println("hi");
         System.out.println(i.getItem_Id());
 		System.out.println(d.getU_id());
          
