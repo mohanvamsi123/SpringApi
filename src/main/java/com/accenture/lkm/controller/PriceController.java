@@ -107,7 +107,7 @@ public class PriceController
         v.save(c);
 		
 		
-		return return "{\"response\":\"successfully added sale.\"}";;
+		return "{\"response\":\"successfully added sale.\"}";
 		
 		
 	}
