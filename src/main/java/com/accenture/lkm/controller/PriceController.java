@@ -84,13 +84,13 @@ public class PriceController
 	public String postdetails(@RequestBody PriceDTO p) {
 		 Person d=null;
 		 Item i=null;
-         d = h.findById(p.getPerson());
-         Price c  = new Price(); 
-         i=g.findById(p.getItem());
+         //d = h.findById(p.getPerson());
+         //Price c  = new Price(); 
+         //i=g.findById(p.getItem());
 
-        System.out.println("hi");
-        System.out.println(i.getItem_Id());
-		System.out.println(d.getU_id());
+        //System.out.println("hi");
+        //System.out.println(i.getItem_Id());
+		//System.out.println(d.getU_id());
          
          c.setPerson(d); 
          c.setItem(i);
