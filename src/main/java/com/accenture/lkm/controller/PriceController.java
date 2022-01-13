@@ -30,8 +30,11 @@ public class PriceController
      
 	@Autowired
 	private PriceDAO v;
+	@Autowired
     private ItemDAO g;
-    private EmployeeDAO h;
+   
+	@Autowired
+	private EmployeeDAO h;
 
 
     @GetMapping(value="/getDetails",produces=MediaType.APPLICATION_JSON_VALUE)
