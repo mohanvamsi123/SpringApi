@@ -85,7 +85,7 @@ public class PriceController
 		 Person d=null;
 		 Item i=null;
          //d = h.findById(p.getPerson());
-         //Price c  = new Price(); 
+         Price c  = new Price(); 
          //i=g.findById(p.getItem());
 
         //System.out.println("hi");
