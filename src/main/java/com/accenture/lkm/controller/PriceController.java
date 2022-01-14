@@ -63,12 +63,12 @@ public class PriceController
 			return new ResponseEntity<List<Item>>(itemService.getItems(), HttpStatus.OK);
         } */
         List<Price> PersonListEntity= v.findAll();
-        List<Price> k=new ArrayList<Price>();
+        List<salesDTO> k=new ArrayList<salesDTO>();
 	    for(Price ue: PersonListEntity) {
 			if(ue.getPerson().getU_id() ==id)
 			{ 
-				 k.add(ue);
-				
+				salesDTO v=new salesDTO(ue.getId(),ue.getPerson().getU_id(),ue.getCreatedAt(),ue.getPerson().getFirstName(),ue.getItem().getItem_Id(),ue.getItem().getItem_Name(),ue.getItem_Qty(),ue.getItem_Price());
+				k.add(v);
 			}
 	  }
 
