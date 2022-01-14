@@ -50,7 +50,7 @@ public class PriceController
 	}	
 
     @GetMapping(value="/getDetails/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Price> getdetails(@PathVariable(value = "id") long id) 
+	public List<salesDTO> getdetails(@PathVariable(value = "id") long id) 
 	{
         
 
