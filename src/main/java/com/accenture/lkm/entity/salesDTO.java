@@ -87,11 +87,11 @@ public void seti_name(String i_name)
 this.i_name = i_name;  
 }  
  public Date getCreatedAt() {
-        return this.createdAt;
+        return this.d;
     }
 
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
+    public void setCreatedAt(Date d) {
+        this.d = d;
     }
 
     
