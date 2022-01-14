@@ -1,4 +1,5 @@
 package com.accenture.lkm.entity;
+import java.util.*;
 
 public class salesDTO
 {
