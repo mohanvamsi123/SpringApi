@@ -15,6 +15,6 @@ public interface PriceDAO extends JpaRepository<Price, Long>{
 	@Query("delete from Price p  where p.Id=:id")
 	void delete(@Param("id") int id);
 
-    @Query("select p from Price p where p.createdAt between ?1 and ?2 and p.Id=?3")
+    @Query("select p from Price p where p.createdAt between ?1 and ?2 and p.person.U_id=?3")
     List<Price>findBycreatedAtBetween(Date date1,Date date2,long id);
 }
