@@ -115,7 +115,8 @@ public class PriceController
 	
 	@PutMapping(value = "/putDetails/{id}")
 	public String  putdetails(@RequestBody Price p, @PathVariable(value = "id") long id){
-		 v.delete(id);
+		 
+
 		 Person d=null;
 		 Item i=null;
          System.out.println(p.getPerson());
