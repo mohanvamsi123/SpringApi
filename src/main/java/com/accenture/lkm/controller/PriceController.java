@@ -152,9 +152,9 @@ public class PriceController
 	}
 
 	@DeleteMapping(value = "/deleteDetails")
-	public void deletedetails(@RequestBody ArrayList<Integer>() a){
+	public void deletedetails(@RequestBody Long[] a){
 
-		for(int i:a)
+		for(Long i:a)
 		{
 			v.delete(i);
 		}
