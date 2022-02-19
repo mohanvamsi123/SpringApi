@@ -114,7 +114,7 @@ public class PriceController
 
 	
 	@PutMapping(value = "/putDetails/{id}")
-	public String  putdetails(@RequestBody Price p, @PathVariable(value = "id") long id){
+	public String  putdetails(@RequestBody PriceDTO p, @PathVariable(value = "id") long id){
 		 
 
 		 Person d=null;
