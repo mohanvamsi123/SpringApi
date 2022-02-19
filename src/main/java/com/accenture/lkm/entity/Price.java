@@ -38,15 +38,15 @@ public class Price {
 
 
 
-    public Price(long Id,double Item_Price,int Item_Qty,Person p,Date createdAt,Item item)
+    public Price(long Id,double Item_Price,int Item_Qty,Person person,Date createdAt,Item item)
     {
         
         this.Id=Id;
         this.Item_Price=Item_Price;
-        this.Item=Item;
+        this.item=item;
         this.createdAt=createdAt;
         this.Item_Qty=Item_Qty;
-        this.person=p;
+        this.person=person;
 
     }
     public Price()

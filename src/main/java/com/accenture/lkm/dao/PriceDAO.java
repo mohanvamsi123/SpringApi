@@ -10,5 +10,5 @@ import com.accenture.lkm.entity.Price;
 public interface PriceDAO extends JpaRepository<Price, Long>{
 
     @Query("select p from Price p  where p.id=:id")
-	Person findById(@Param("id") long id);
+	Price findById(@Param("id") long id);
 }
