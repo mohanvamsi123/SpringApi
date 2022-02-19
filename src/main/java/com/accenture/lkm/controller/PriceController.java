@@ -174,9 +174,9 @@ public class PriceController
 			
 		}else { */
         System.out.println(date1);
-		Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
-		Date date2=new SimpleDateFormat("yyyy-MM-dd").parse(date2);  
-		List<Price>p=v.findBycreatedAtBetween(date1,date2);
+		Date datex1=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
+		Date datex2=new SimpleDateFormat("yyyy-MM-dd").parse(date2);  
+		List<Price>p=v.findBycreatedAtBetween(datex1,datex2);
 		return p;
 		//	return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
 		
