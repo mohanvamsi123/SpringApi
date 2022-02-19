@@ -20,6 +20,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.accenture.lkm.entity.*;
 import com.accenture.lkm.dao.*;
+import java.text.SimpleDateFormat;  
+import java.util.Date;
 
 @CrossOrigin
 @RestController
@@ -172,6 +174,8 @@ public class PriceController
 			
 		}else { */
         System.out.println(date1);
+		Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
+		Date date2=new SimpleDateFormat("yyyy-MM-dd").parse(date2);  
 		List<Price>p=v.findBycreatedAtBetween(date1,date2);
 		return p;
 		//	return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
