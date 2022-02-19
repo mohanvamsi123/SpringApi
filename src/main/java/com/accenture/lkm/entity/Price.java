@@ -23,9 +23,9 @@ public class Price {
     
 
     
-    @ManyToOne(cascade = CascadeType.Remove)
+    @ManyToOne(cascade = CascadeType.All)
     @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
-    @OnDelete(action = OnDeleteAction.CASCADE)
+    
     private Item item;
     
     @DateTimeFormat(pattern="yyyy-MM-dd")
@@ -33,9 +33,9 @@ public class Price {
     @Temporal(TIMESTAMP)
     private Date createdAt;
 
-    @ManyToOne(cascade = CascadeType.Remove)
+    @ManyToOne(cascade = CascadeType.All)
     @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
-    @OnDelete(action = OnDeleteAction.CASCADE)
+   
     private Person person;
 
 
