@@ -115,11 +115,32 @@ public class PriceController
 	
 	@PutMapping(value = "/putDetails/{id}")
 	public String  putdetails(@RequestBody Price p, @PathVariable(value = "id") long id){
-        System.out.println(id);
-		Price p1 =v.findById(id);
-		System.out.println(p1);
-		p1=new Price(id,p.getItem_Price() ,p.getItem_Qty(),p.getPerson(),p.getCreatedAt(),p.getItem());
-	    final Price updatedPerson = v.save(p1);
+		 v.delete(id);
+		 Person d=null;
+		 Item i=null;
+         System.out.println(p.getPerson());
+		 
+         d = h.findById(p.getPerson());
+         Price c  = new Price(); 
+         i=g.findById(p.getItem());
+
+        //System.out.println("hi");
+        //System.out.println(i.getItem_Id());
+		//System.out.println(d.getU_id());
+         
+         c.setPerson(d); 
+         c.setItem(i);
+         c.setItem_Price(p.getItem_Price());
+         c.setItem_Qty(p.getItem_Qty());
+         c.setCreatedAt(p.getCreatedAt()); 
+
+        
+
+
+   
+
+        v.save(c);
+        
 	    return "{\"response\":\"successfully updated sale.\"}";
    }
 
