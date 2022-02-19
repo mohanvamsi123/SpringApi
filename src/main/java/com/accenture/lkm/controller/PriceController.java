@@ -121,13 +121,13 @@ public class PriceController
 		p1=new Price(id,p.getItem_Price() ,p.getItem_Qty(),p.getPerson(),p.getCreatedAt(),p.getItem());
 	    final Price updatedPerson = v.save(p1);
 	    return "{\"response\":\"successfully updated sale.\"}";
+   }
+
+    @DeleteMapping(value = "/deleteDetails/{id}")
+	public void deletedetails(@PathVariable(value = "id") long id){
+
+		p.delete(id);
 
 
 
-	
-
-    
-
-}
-
-}
+}}
