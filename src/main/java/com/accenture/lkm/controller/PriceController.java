@@ -165,8 +165,8 @@ public class PriceController
 
 	}
 
-	 @GetMapping(value="/getDetails/{date1}/{date2}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Price> getdetails(@PathVariable(value = "date1") String date1,@PathVariable(value = "date2") String date2 ) throws Exception
+	 @GetMapping(value="/getDetails/{id}/{date1}/{date2}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Price> getdetails(@PathVariable(value = "date1") String date1,@PathVariable(value = "date2") String date2,@PathVariable(value = "id") long id ) throws Exception
 	{
 	/*	if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
@@ -176,7 +176,7 @@ public class PriceController
         System.out.println(date1);
 		Date datex1=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
 		Date datex2=new SimpleDateFormat("yyyy-MM-dd").parse(date2);  
-		List<Price>p=v.findBycreatedAtBetween(datex1,datex2);
+		List<Price>p=v.findBycreatedAtBetween(datex1,datex2,id);
 		return p;
 		//	return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
 		
