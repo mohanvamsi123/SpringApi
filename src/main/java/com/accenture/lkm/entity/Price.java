@@ -23,7 +23,7 @@ public class Price {
     
 
     
-    @ManyToOne(cascade = CascadeType.All)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
     
     private Item item;
@@ -33,7 +33,7 @@ public class Price {
     @Temporal(TIMESTAMP)
     private Date createdAt;
 
-    @ManyToOne(cascade = CascadeType.All)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
    
     private Person person;
