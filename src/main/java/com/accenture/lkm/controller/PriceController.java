@@ -148,7 +148,7 @@ public class PriceController
     @DeleteMapping(value = "/deleteDetails/{id}")
 	public void deletedetails(@PathVariable(value = "id") long id){
 
-		v.deleteById(id);
+		v.delete(id);
 
 
 
