@@ -174,7 +174,6 @@ public class PriceController
 			return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
 		
 	}
-
 	
 
 
