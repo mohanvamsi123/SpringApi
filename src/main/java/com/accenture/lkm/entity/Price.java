@@ -23,7 +23,7 @@ public class Price {
     
 
     
-    @ManyToOne(cascade = CascadeType.ALL)
+     @ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
     @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
     
     private Item item;
@@ -32,8 +32,8 @@ public class Price {
     @Column(name = "created_at",updatable=false)
     @Temporal(TIMESTAMP)
     private Date createdAt;
-
-    @ManyToOne(cascade = CascadeType.ALL)
+    
+    @ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST}, fetch=FetchType.EAGER)
     @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
    
     private Person person;
