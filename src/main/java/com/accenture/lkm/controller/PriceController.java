@@ -159,7 +159,25 @@ public class PriceController
 			v.delete(i);
 		}
 
+		return "{\"response\":\"successfully deleted sales.\"}";
+
 	}
+
+	 @GetMapping(value="/getDetails/{date1}/{date2}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<Price>> getdetails(@PathVariable(value = "date1") Date date1,@PathVariable(value = "date2") Date date2 ) 
+	{
+	/*	if((itemService.getItems()).isEmpty()) {
+			System.out.println("no data found");
+			return new ResponseEntity<List<Price>>(HttpStatus.NO_CONTENT);
+			
+		}else { */
+			return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
+		
+	}
+
+	
+
+
 
 
 
