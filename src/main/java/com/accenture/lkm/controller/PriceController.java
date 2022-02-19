@@ -114,11 +114,12 @@ public class PriceController
 
 	
 	@PutMapping(value = "/putDetails/{id}")
-	public String  putdetails(@RequestBody Person p, @PathVariable(value = "id") long id){
+	public String  putdetails(@RequestBody Price p, @PathVariable(value = "id") long id){
 
-		v.save(p);
-
-		return "{\"response\":\"successfully updated sale.\"}";
+		Price p1 =e.findById(id);
+		p1=new Price(id,p.getItem_Price() ,p.getItem_Qty(),p.getPerson(),getCreatedAt(),p.getItem());
+	    final Price updatedPerson = v.save(p1);
+	    return "{\"response\":\"successfully updated sale.\"}";
 
 
 
@@ -126,4 +127,6 @@ public class PriceController
 
     
 
-}}
+}
+
+}
