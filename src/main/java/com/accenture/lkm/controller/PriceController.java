@@ -166,7 +166,7 @@ public class PriceController
 	}
 
 	 @GetMapping(value="/getDetails/{date1}/{date2}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Price> getdetails(@PathVariable(value = "date1") String date1,@PathVariable(value = "date2") String date2 ) 
+	public List<Price> getdetails(@PathVariable(value = "date1") String date1,@PathVariable(value = "date2") String date2 ) throws Exception
 	{
 	/*	if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
