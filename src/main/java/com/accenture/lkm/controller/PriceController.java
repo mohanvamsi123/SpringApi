@@ -156,7 +156,7 @@ public class PriceController
 
 		for(int i:a)
 		{
-			v.delete(i)
+			v.delete(i);
 		}
 
 	}
