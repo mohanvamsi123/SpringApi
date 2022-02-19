@@ -116,8 +116,8 @@ public class PriceController
 	@PutMapping(value = "/putDetails/{id}")
 	public String  putdetails(@RequestBody Price p, @PathVariable(value = "id") long id){
 
-		Price p1 =e.findById(id);
-		p1=new Price(id,p.getItem_Price() ,p.getItem_Qty(),p.getPerson(),getCreatedAt(),p.getItem());
+		Price p1 =v.findById(id);
+		p1=new Price(id,p.getItem_Price() ,p.getItem_Qty(),p.getPerson(),p.getCreatedAt(),p.getItem());
 	    final Price updatedPerson = v.save(p1);
 	    return "{\"response\":\"successfully updated sale.\"}";
 
