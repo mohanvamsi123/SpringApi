@@ -111,8 +111,17 @@ public class PriceController
 		
 		
 	}
+
+	
+	@PutMapping(value = "/putDetails/{id}")
+	public ResponseEntity<Person>  putdetails(@RequestBody Person p, @PathVariable(value = "id") long id){
+
+		v.save(p);
+
+
+
 	
 
     
 
-}
+}}
