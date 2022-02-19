@@ -152,7 +152,7 @@ public class PriceController
 	}
 
 	@DeleteMapping(value = "/deleteDetails")
-	public void deletedetails(@RequestBody Long[] a){
+	public String deletedetails(@RequestBody Long[] a){
 
 		for(Long i:a)
 		{
@@ -164,7 +164,7 @@ public class PriceController
 	}
 
 	 @GetMapping(value="/getDetails/{date1}/{date2}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Price>> getdetails(@PathVariable(value = "date1") Date date1,@PathVariable(value = "date2") Date date2 ) 
+	public List<Price> getdetails(@PathVariable(value = "date1") Date date1,@PathVariable(value = "date2") Date date2 ) 
 	{
 	/*	if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
