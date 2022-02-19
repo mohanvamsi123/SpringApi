@@ -120,7 +120,7 @@ public class PriceController
 		System.out.println(p1);
 		/*p1=new Price(id,p.getItem_Price() ,p.getItem_Qty(),p.getPerson(),p.getCreatedAt(),p.getItem());
 	    //final Price updatedPerson = v.save(p1);
-	    //return "{\"response\":\"successfully updated sale.\"}";
+	    //return "{\"response\":\"successfully updated sale.\"}";*/
 
 
 
