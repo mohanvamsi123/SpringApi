@@ -164,14 +164,14 @@ public class PriceController
 	}
 
 	 @GetMapping(value="/getDetails/{date1}/{date2}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Price> getdetails(@PathVariable(value = "date1") Date date1,@PathVariable(value = "date2") Date date2 ) 
+	public List<Price> getdetails(@PathVariable(value = "date1") String date1,@PathVariable(value = "date2") Strng date2 ) 
 	{
 	/*	if((itemService.getItems()).isEmpty()) {
 			System.out.println("no data found");
 			return new ResponseEntity<List<Price>>(HttpStatus.NO_CONTENT);
 			
 		}else { */
-
+        
 		List<Price>p=v.findBycreatedAtBetween(date1,date2);
 		return p;
 		//	return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
