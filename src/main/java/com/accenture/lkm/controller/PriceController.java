@@ -171,7 +171,7 @@ public class PriceController
 			return new ResponseEntity<List<Price>>(HttpStatus.NO_CONTENT);
 			
 		}else { */
-        
+        System.out.println(date1);
 		List<Price>p=v.findBycreatedAtBetween(date1,date2);
 		return p;
 		//	return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
