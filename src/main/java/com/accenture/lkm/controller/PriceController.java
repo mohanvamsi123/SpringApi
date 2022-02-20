@@ -148,6 +148,7 @@ public class PriceController
 		 Person d=null;
 		 Item i=null;
          System.out.println(p.getPerson());
+		 System.out.println(p.getCreatedAt());
 		 
          d = h.findById(p.getPerson());
          Price c  = v.findById(id);
