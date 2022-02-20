@@ -81,6 +81,32 @@ public class PriceController
      
 	}	
 
+
+	@GetMapping(value="/getDetails/{id}/{date1}/{date2}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<salesDTO> getdetails(@PathVariable(value = "date1") String date1,@PathVariable(value = "date2") String date2,@PathVariable(value = "id") long id ) throws Exception
+	{
+	/*	if((itemService.getItems()).isEmpty()) {
+			System.out.println("no data found");
+			return new ResponseEntity<List<Price>>(HttpStatus.NO_CONTENT);
+			
+		}else { */
+        
+		Date datex1=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
+		Date datex2=new SimpleDateFormat("yyyy-MM-dd").parse(date2);  
+		List<Price>p=v.findBycreatedAtBetween(datex1,datex2,id);
+		List<salesDTO> k=new ArrayList<salesDTO>();
+	    for(Price ue: PersonListEntity) {
+			if(ue.getPerson().getU_id() ==id)
+			{ 
+				salesDTO v=new salesDTO(ue.getId(),ue.getPerson().getU_id(),ue.getCreatedAt(),ue.getPerson().getFirstName(),ue.getItem().getItem_Id(),ue.getItem().getItem_Name(),ue.getItem_Qty(),ue.getItem_Price());
+				k.add(v);
+			}
+	  }
+
+		//	return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
+		
+	}
+
     @PostMapping(value = "/postDetails")
 	public String postdetails(@RequestBody PriceDTO p) {
 		 Person d=null;
@@ -161,22 +187,7 @@ public class PriceController
 
 	}
 
-	 @GetMapping(value="/getDetails/{id}/{date1}/{date2}",produces=MediaType.APPLICATION_JSON_VALUE)
-	public List<Price> getdetails(@PathVariable(value = "date1") String date1,@PathVariable(value = "date2") String date2,@PathVariable(value = "id") long id ) throws Exception
-	{
-	/*	if((itemService.getItems()).isEmpty()) {
-			System.out.println("no data found");
-			return new ResponseEntity<List<Price>>(HttpStatus.NO_CONTENT);
-			
-		}else { */
-        System.out.println(date1);
-		Date datex1=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
-		Date datex2=new SimpleDateFormat("yyyy-MM-dd").parse(date2);  
-		List<Price>p=v.findBycreatedAtBetween(datex1,datex2,id);
-		return p;
-		//	return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
-		
-	}
+
 	
 
 
