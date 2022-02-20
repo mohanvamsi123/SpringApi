@@ -150,11 +150,11 @@ public class PriceController
 
 
 	@DeleteMapping(value = "/deleteDetails/{ids}")
-	public String deletedetails(@PathVariable(value = "ids") Long[] a){
+	public String deletedetails(@PathVariable(value = "ids") String a){
 
-		for(Long i:a)
+		for(String i:a.split(","))
 		{
-			v.delete(i);
+			v.delete(Long.parseLong(i));
 		}
 
 		return "{\"response\":\"successfully deleted sales.\"}";
