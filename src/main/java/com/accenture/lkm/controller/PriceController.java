@@ -156,7 +156,7 @@ public class PriceController
         //System.out.println("hi");
         //System.out.println(i.getItem_Id());
 		//System.out.println(d.getU_id());
-         c.setId(id)
+         c.setId(id);
          c.setPerson(d); 
          c.setItem(i);
          c.setItem_Price(p.getItem_Price());
