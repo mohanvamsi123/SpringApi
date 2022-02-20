@@ -17,4 +17,7 @@ public interface PriceDAO extends JpaRepository<Price, Long>{
 
     @Query("select p from Price p where p.createdAt>=?1 and p.createdAt<=?2 and p.person.U_id=?3")
     List<Price>findBycreatedAtBetween(Date date1,Date date2,long id);
+
+    @Query("select p from Price p  where p.id=:id")
+	Person findById(@Param("id") long id);
 }
