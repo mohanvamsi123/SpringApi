@@ -153,8 +153,8 @@ public class PriceController
 		v.delete(id);
 	}
 
-	@DeleteMapping(value = "/deleteDetails")
-	public String deletedetails(@RequestBody Long[] a){
+	@DeleteMapping(value = "/deleteDetails/{ids}")
+	public String deletedetails(@PathVariable(value = "ids") Long[] a){
 
 		for(Long i:a)
 		{
