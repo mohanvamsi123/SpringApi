@@ -147,11 +147,7 @@ public class PriceController
 	    return "{\"response\":\"successfully updated sale.\"}";
    }
 
-    @DeleteMapping(value = "/deleteDetails/{id}")
-	public void deletedetails(@PathVariable(value = "id") long id){
 
-		v.delete(id);
-	}
 
 	@DeleteMapping(value = "/deleteDetails/{ids}")
 	public String deletedetails(@PathVariable(value = "ids") Long[] a){
