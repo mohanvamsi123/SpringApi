@@ -102,7 +102,7 @@ public class PriceController
 				k.add(v);
 			}
 	  }
-
+     return k;
 		//	return new ResponseEntity<List<Price>>(v.findBycreatedAtBetween(date1,date2), HttpStatus.OK);
 		
 	}
