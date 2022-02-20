@@ -150,26 +150,20 @@ public class PriceController
          System.out.println(p.getPerson());
 		 
          d = h.findById(p.getPerson());
-         Price c  = new Price(); 
+         Price c  = v.findById(id);
          i=g.findById(p.getItem());
 
         //System.out.println("hi");
         //System.out.println(i.getItem_Id());
 		//System.out.println(d.getU_id());
-         
+         c.setId(id)
          c.setPerson(d); 
          c.setItem(i);
          c.setItem_Price(p.getItem_Price());
          c.setItem_Qty(p.getItem_Qty());
          c.setCreatedAt(p.getCreatedAt()); 
 
-        
-
-
-   
-
-        v.save(c);
-        
+	    final Price updatedPerson = v.save(c);
 	    return "{\"response\":\"successfully updated sale.\"}";
    }
 
