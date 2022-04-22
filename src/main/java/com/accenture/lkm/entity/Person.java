@@ -13,6 +13,8 @@ import java.lang.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 
 @Entity(name="Person")
@@ -40,7 +42,18 @@ public class Person {
    @DateTimeFormat(pattern="yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
 	@Column(insertable=false)
-   private Date CreatedDate=new java.util.Date(System.currentTimeMillis());;
+   private Date CreatedDate=new java.util.Date(System.currentTimeMillis());
+   
+ 
+   
+  /* @OneToMany(cascade = CascadeType.ALL)
+   @JoinColumn(name = "Person_id", referencedColumnName = "Person_id") 
+   private List<Cust_Payment> payments; 
+   
+   @OneToMany(cascade = CascadeType.ALL)
+   private List<Cust_Payment> p; 
+   
+   */
 
    
   @Embedded

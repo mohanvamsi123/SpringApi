@@ -20,10 +20,22 @@ public class Price {
     private double Item_Price;
     @Column(name = "Item_Qty", nullable = false)
     private int Item_Qty;
+    @Column(name = "Total_Price", nullable = false)
+    private long Total_Price;
     
 
     
-    @ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    public void setTotal_Price(long total_Price) {
+		Total_Price = total_Price;
+	}
+	public long getTotal_Price() {
+		return Total_Price;
+	}
+	public void setTotal_Price(int total_Price) {
+		Total_Price = total_Price;
+	}
+
+	@ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "Item_Id", referencedColumnName = "Item_Id") 
     
     private Item item;
@@ -35,7 +47,6 @@ public class Price {
     
     @ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
-   
     private Person person;
 
 
