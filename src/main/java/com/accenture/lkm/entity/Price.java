@@ -1,9 +1,21 @@
 package com.accenture.lkm.entity;
-import org.springframework.format.annotation.DateTimeFormat;
-//import org.springframework.data.annotation.*;
-import javax.persistence.*;  
 import java.util.Date;
+
+//import org.springframework.data.annotation.*;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+
 import static javax.persistence.TemporalType.TIMESTAMP;
+
+import org.springframework.format.annotation.DateTimeFormat;
 @Entity(name="Price")
 @Table()
 public class Price {
@@ -40,9 +52,11 @@ public class Price {
     
     private Item item;
     
-    @DateTimeFormat(pattern="yyyy-MM-dd")
+    //@DateTimeFormat(pattern="yyyy-MM-dd")
+	//@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@Temporal(TIMESTAMP)
     @Column(name = "created_at",updatable=true)
-    @Temporal(TIMESTAMP)
     private Date createdAt;
     
     @ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})

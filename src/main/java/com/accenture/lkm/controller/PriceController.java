@@ -1,10 +1,12 @@
 package com.accenture.lkm.controller;
+import org.springframework.data.domain.Sort;
 
 
 
 import java.util.*;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +22,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.accenture.lkm.entity.*;
 import com.accenture.lkm.dao.*;
-import java.text.SimpleDateFormat;  
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.Date;
 
 @CrossOrigin
@@ -64,7 +69,7 @@ public class PriceController
 
 			return new ResponseEntity<List<Item>>(itemService.getItems(), HttpStatus.OK);
         } */
-        List<Price> PersonListEntity= v.findAll();
+        List<Price> PersonListEntity= v.findAll(new Sort(Sort.Direction.ASC, "createdAt"));
         List<salesDTO> k=new ArrayList<salesDTO>();
 	    for(Price ue: PersonListEntity) {
 			if(ue.getPerson().getU_id() ==id)
@@ -91,9 +96,12 @@ public class PriceController
 			
 		}else { */
         
-		Date datex1=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
-		Date datex2=new SimpleDateFormat("yyyy-MM-dd").parse(date2);  
-		List<Price>p=v.findBycreatedAtBetween(datex1,datex2,id);
+		Date startDate=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
+		//Date datex2=;
+		Date endDate=new Date(new SimpleDateFormat("yyyy-MM-dd").parse(date2).getTime()+(86400000));
+		//System.out.println(startDate);
+		//System.out.println(endDate);
+		List<Price>p=v.findBycreatedAtBetween(startDate,endDate,id);
 		List<salesDTO> k=new ArrayList<salesDTO>();
 	    for(Price ue: p) {
 			if(ue.getPerson().getU_id() ==id)
@@ -181,9 +189,26 @@ public class PriceController
 		return "{\"response\":\"successfully deleted sales.\"}";
 
 	}
-
-
 	
+	
+	
+
+	@GetMapping(value="/getDetails/dates/{id}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Date> getdatebyid(@PathVariable(value = "id") long id) 
+		{
+		   
+		return v.finddates(id);
+		
+	  }
+	
+	@GetMapping(value="/getDetails/dates/{id}/{date}",produces=MediaType.APPLICATION_JSON_VALUE)
+	public List<Price> getdatabydate(@PathVariable(value = "id") long id,@PathVariable(value = "date") String date) throws ParseException 
+		{
+		Date datex1=new SimpleDateFormat("yyyy-MM-dd").parse(date);
+        System.out.println(datex1);
+		
+		return v.findPrice(id,datex1);
+		 }
 
 
 

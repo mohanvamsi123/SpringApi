@@ -65,15 +65,9 @@ public class ItemController {
 
 	@PostMapping(value = "/postDetails")
 	public String postdetails(@RequestBody Item p){
-		
-
-	    itemService.PostItems(p);
+		itemService.PostItems(p);
 	    return "{\"response\":\"successfully added item.\"}";
-		
-		
-		
-		
-	}
+		}
 	
 			
 	
@@ -82,19 +76,11 @@ public class ItemController {
 	
 	@PutMapping(value = "/putDetails/{id}")
 	public String  putdetails(@PathVariable(value = "id") long id){
-		 System.out.print("entr");
-	String d=itemService.Update(id);
-
-
-
-	if(d=="yes")
-	{
-	
-  return "{\"response\":\"successfully updated item,.\"}";
-  }
-
-	
-	else {
+    String d=itemService.Update(id);
+    if(d=="yes"){
+	 return "{\"response\":\"successfully updated item,.\"}";
+    }
+    else {
 		return "{\"response\":\" sorry item not available,.\"}";
 		}
 	}

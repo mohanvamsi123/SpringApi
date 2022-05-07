@@ -35,7 +35,7 @@ public class Cust_Payment {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private long Id;
 	
-	
+	@Column(name = "Amount")
 	private long Amount;
 	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
@@ -44,10 +44,10 @@ public class Cust_Payment {
     private Date transaction_date;
 	
 
-   
+    
     @ManyToOne(cascade={CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name = "U_id",nullable=false)
-    private Person p;
+    @JoinColumn(name = "Person_id", referencedColumnName = "U_id") 
+    private Person person;
 	
    
 
