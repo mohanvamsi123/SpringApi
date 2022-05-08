@@ -204,10 +204,12 @@ public class PriceController
 	@GetMapping(value="/getDetails/dates/{id}/{date}",produces=MediaType.APPLICATION_JSON_VALUE)
 	public List<Price> getdatabydate(@PathVariable(value = "id") long id,@PathVariable(value = "date") String date) throws ParseException 
 		{
-		Date datex1=new SimpleDateFormat("yyyy-MM-dd").parse(date);
-        System.out.println(datex1);
+		Date startDate=new SimpleDateFormat("yyyy-MM-dd").parse(date);
+		Date endDate=new Date(startDate.getTime()+(86400000));
+        System.out.println(startDate);
+        System.out.println(endDate);
 		
-		return v.findPrice(id,datex1);
+		return v.findPrice(id,startDate,endDate);
 		 }
 
 
