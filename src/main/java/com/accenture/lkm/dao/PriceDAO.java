@@ -8,6 +8,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import com.accenture.lkm.entity.Price;
+
+import java.time.LocalDate;
 import java.util.*;
 public interface PriceDAO extends JpaRepository<Price, Long>{
 
@@ -27,7 +29,7 @@ public interface PriceDAO extends JpaRepository<Price, Long>{
 
   
     //@Query("select Distinct p.createdAt from Price p  where p.person.U_id=?1")
-    @Query("select distinct CAST(convert_tz(`p.created_at`,'+00:00','+05:30') AS DATE) from Price p where p.person.U_id=?1")
+    @Query("select Distinct date(convert_tz(p.createdAt,'+00:00','+05:30')) from Price p where p.person.U_id=?1")
 	List<Date> finddates(long id);
     
     @Query("select p from Price p  where p.person.U_id=?1 and p.createdAt=date(convert_tz(?2,'+00:00','-05:30'))")
