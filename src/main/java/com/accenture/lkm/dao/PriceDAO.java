@@ -26,7 +26,8 @@ public interface PriceDAO extends JpaRepository<Price, Long>{
 	Price findById(@Param("id") long id);
 
   
-    @Query("select Distinct p.createdAt from Price p  where p.person.U_id=?1")
+    //@Query("select Distinct p.createdAt from Price p  where p.person.U_id=?1")
+    @Query(" distinct CAST(convert_tz(`p.created_at`,'+00:00','+05:30') AS DATE) from Price p where p.person.U_id=?1")
 	List<Date> finddates(long id);
     
     @Query("select p from Price p  where p.person.U_id=?1 and p.createdAt=date(convert_tz(?2,'+00:00','-05:30'))")
