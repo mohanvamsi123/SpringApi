@@ -20,4 +20,8 @@ public interface PaymentDAO extends JpaRepository<Cust_Payment, Long>{
 	//@Query("select p from Cust_Payment p where p.createdAt>=?1 and p.createdAt<=?2 and p.person.U_id=?3")
 	 @Query("select p from Cust_Payment p where date(convert_tz(p.transaction_date,'+00:00','+05:30'))>=?1 and date(convert_tz(p.transaction_date,'+00:00','+05:30'))<=?2 and p.person.U_id=?3")
      List<Cust_Payment>findBycreatedAtBetween(Date date1,Date date2,long id);
+     
+     
+    @Query("select p from Cust_Payment p  where p.id=:id")
+ 	Cust_Payment findById(@Param("id") long id);
 }
