@@ -205,7 +205,7 @@ public class PriceController
 	public List<Price> getdatabydate(@PathVariable(value = "id") long id,@PathVariable(value = "date") String date) throws ParseException 
 		{
 		Date startDate=new SimpleDateFormat("yyyy-MM-dd").parse(date);
-		Date endDate=new Date(startDate.getTime()+(86400000));
+		Date endDate=new Date(startDate.getTime()+(86399000));
         System.out.println(startDate);
         System.out.println(endDate);
 		
