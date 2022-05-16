@@ -64,7 +64,7 @@ public class Cust_PaymentController {
 		Date originalDate=new SimpleDateFormat("yyyy-MM-dd").parse(date);
 		Date transactionDate = new Date(originalDate.getTime()+(86399000));
 		Date priceDate=new Date(originalDate.getTime()-(86400000)+(86399000));
-		System.out.println(originalDate);
+		//System.out.println(originalDate);
 		System.out.println(priceDate);
 		System.out.println(transactionDate);
 		List<Object[]> results = v.getTransactions(userid,transactionDate,priceDate);
