@@ -98,7 +98,7 @@ public class PriceController
         
 		Date startDate=new SimpleDateFormat("yyyy-MM-dd").parse(date1);
 		//Date datex2=;
-		Date endDate=new Date(new SimpleDateFormat("yyyy-MM-dd").parse(date2).getTime()+(86400000));
+		Date endDate=new Date(new SimpleDateFormat("yyyy-MM-dd").parse(date2).getTime()+(86399000));
 		System.out.println(startDate);
 		System.out.println(endDate);
 		List<Price>p=v.findBycreatedAtBetween(startDate,endDate,id);
