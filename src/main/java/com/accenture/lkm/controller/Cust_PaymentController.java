@@ -30,6 +30,8 @@ import com.accenture.lkm.entity.Person;
 import com.accenture.lkm.entity.Price;
 import com.accenture.lkm.entity.PriceDTO;
 import com.accenture.lkm.entity.TransactionsDTO;
+import com.accenture.lkm.entity.PreviousBalanceDTO;
+
 
 
 @CrossOrigin
@@ -41,6 +43,16 @@ public class Cust_PaymentController {
 	@Autowired
 	private EmployeeDAO h;
 	
+	public List<Object[]> getTransactionData(long userid, String date)throws ParseException{
+		Date originalDate=new SimpleDateFormat("yyyy-MM-dd").parse(date);
+		Date transactionDate = new Date(originalDate.getTime()+(86399000));
+		Date priceDate=new Date(originalDate.getTime()-(86400000)+(86399000));
+		System.out.println(originalDate);
+		System.out.println(priceDate);
+		System.out.println(transactionDate);
+		List<Object[]> results = v.getTransactions(userid,transactionDate,priceDate);
+		return results;
+	}
 	
 	@GetMapping("/payment/{id}/{date1}/{date2}")
 	public List<Cust_Payment> getdetails(@PathVariable(value = "id") long id,@PathVariable(value = "date1") String date1,@PathVariable(value = "date2") String date2 ) throws Exception{
@@ -61,13 +73,14 @@ public class Cust_PaymentController {
 	 @GetMapping("/transactions/{userid}/{date}")
 	 public List<TransactionsDTO> getTransactions(@PathVariable(value = "userid") long userid,@PathVariable(value = "date") String date) throws ParseException
 	 {
-		Date originalDate=new SimpleDateFormat("yyyy-MM-dd").parse(date);
-		Date transactionDate = new Date(originalDate.getTime()+(86399000));
-		Date priceDate=new Date(originalDate.getTime()-(86400000)+(86399000));
+		//Date originalDate=new SimpleDateFormat("yyyy-MM-dd").parse(date);
+		//Date transactionDate = new Date(originalDate.getTime()+(86399000));
+		//Date priceDate=new Date(originalDate.getTime()-(86400000)+(86399000));
 		//System.out.println(originalDate);
-		System.out.println(priceDate);
-		System.out.println(transactionDate);
-		List<Object[]> results = v.getTransactions(userid,transactionDate,priceDate);
+		//System.out.println(priceDate);
+		//System.out.println(transactionDate);
+		//List<Object[]> results = v.getTransactions(userid,transactionDate,priceDate);
+		List<Object[]> results = getTransactionData(userid, date);
         List<TransactionsDTO> t=new ArrayList<>();
 		 for (Object[] result : results) {
 			 TransactionsDTO d=new TransactionsDTO();
@@ -79,6 +92,29 @@ public class Cust_PaymentController {
 		    		 
 		 } 
 		return t;
+		
+		 
+	 }
+	 
+	 
+	 @GetMapping("/previousBalance/{userid}/{date}")
+	 public PreviousBalanceDTO getPreviousBalance(@PathVariable(value = "userid") long userid,@PathVariable(value = "date") String date) throws ParseException
+	 {
+		List<Object[]> results = getTransactionData(userid, date);
+        //List<TransactionsDTO> t=new ArrayList<>();
+        long caluclate = 0;
+       // List<PreviousBalanceDTO> t=new ArrayList<>();
+		 PreviousBalanceDTO d=new PreviousBalanceDTO();
+
+		 for (Object[] result : results) {
+			 if(((String)result[2]).equals("Credited")) {
+				 caluclate = caluclate - ((BigDecimal)result[0]).longValue();
+			 }else {
+				 caluclate = caluclate + ((BigDecimal)result[0]).longValue();
+			 }
+		 }
+		d.setPreviousBalance(caluclate);
+		return d;
 		
 		 
 	 }
